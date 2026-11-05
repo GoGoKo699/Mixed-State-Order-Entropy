@@ -9,12 +9,12 @@ For explicit finite formulas, use a nearest-neighbor, one- or two-site gate conv
 Throughout,
 
 ```math
-C_{ij}=\operatorname{Tr}(\rho Z_iZ_j),\qquad
+C_{ij}=\mathrm{Tr}(\rho Z_iZ_j),\qquad
 f_{ij}=F(\rho,Z_iZ_j\rho Z_iZ_j),\qquad
 h=h_2((1+c)/2),\quad w(c)=1-h.
 ```
 
-The headline promises are $`C\preceq\kappa I`$, all distinct-pair $`f_{ij}\ge c>0`$, and $`Q\rho=\rho`$. The first family of lower bounds below does not need the symmetry promise.
+The headline promises are $`C\preceq\kappa I`$, all distinct-pair $`f_{ij}\ge c\gt 0`$, and $`Q\rho=\rho`$. The first family of lower bounds below does not need the symmetry promise.
 
 ## Independent output regions
 
@@ -27,7 +27,7 @@ For a state prepared in $`\mathcal P_D`$, let $`A_1,\ldots,A_K`$ be output regio
 \tag{B1}
 ```
 
-A sufficient geometric condition is $`\operatorname{dist}(A_b,A_{b'})>2D`$.
+A sufficient geometric condition is $`\mathrm{dist}(A_b,A_{b'})\gt 2D`$.
 
 **Proof.** Include every apparatus wire and classical register in the causal circuit. Pull back a product of arbitrary observables on the output regions through the adjoint channels. No gate intersects the active cones of two different regions; otherwise their backward cones would overlap. At each layer the pulled-back product consequently remains the product of the separately pulled-back observables. At the initial layer these observables occupy disjoint sets of sites. The initial state factors across those sets, so the expectation of every such product factors. This is equivalent to (B1). Local resets and measurements do not change the argument because the complete unconditioned channels are CPTP. Conditioning on a collection of measurement outcomes would be a different statement and is not being done here.
 
@@ -58,7 +58,7 @@ U_a=\prod_{b=1}^K Z_{b,a_b}.
 All these operators commute. Output factorization gives
 
 ```math
-G_{aa'}=\operatorname{Tr}\!\left(\rho\prod_bZ_{b,a_b}Z_{b,a'_b}\right)
+G_{aa'}=\mathrm{Tr}\!\left(\rho\prod_bZ_{b,a_b}Z_{b,a'_b}\right)
 =\prod_b(C_b)_{a_ba'_b}.
 ```
 
@@ -94,9 +94,9 @@ p_D(b)^d[q(b)w(c)-\log\kappa]_+.
 
 If $`\rho=\sum_rp_r\rho_r`$ and $`Q\rho=\rho`$, then every positive-weight $`\rho_r`$ obeys $`Q\rho_r=\rho_r`$.
 
-**Proof.** Write $`\Pi_-=(I-Q)/2`$. The nonnegative numbers $`\operatorname{Tr}(\Pi_-\rho_r)`$ average to zero, so each is zero. For a positive state, zero weight in this subspace means its support is contained in the complementary subspace: $`\|\rho_r^{1/2}\Pi_-\|_2^2=0`$. Hence $`\Pi_-\rho_r=\rho_r\Pi_-=0`$.
+**Proof.** Write $`\Pi_-=(I-Q)/2`$. The nonnegative numbers $`\mathrm{Tr}(\Pi_-\rho_r)`$ average to zero, so each is zero. For a positive state, zero weight in this subspace means its support is contained in the complementary subspace: $`\|\rho_r^{1/2}\Pi_-\|_2^2=0`$. Hence $`\Pi_-\rho_r=\rho_r\Pi_-=0`$.
 
-Since $`QZ_iQ=-Z_i`$, every such branch has $`\operatorname{Tr}(\rho_rZ_i)=0`$. At sites with disjoint backward cones, the branch's joint $`Z`$-measurement law is therefore the same uniform product law. Averaging over $`R`$ preserves that law. This argument does not assume that branch fidelities obey the target promise; fidelity is used only for the unconditional state.
+Since $`QZ_iQ=-Z_i`$, every such branch has $`\mathrm{Tr}(\rho_rZ_i)=0`$. At sites with disjoint backward cones, the branch's joint $`Z`$-measurement law is therefore the same uniform product law. Averaging over $`R`$ preserves that law. This argument does not assume that branch fidelities obey the target promise; fidelity is used only for the unconditional state.
 
 ### Theorem B5: Finite causal-volume lower bound
 
@@ -170,11 +170,11 @@ The path has two edge colors, so this state is available in $`\mathcal P_2`$. In
 
 In the explicit two-site-gate model, exact strong symmetry and nonzero all-pair fidelity make $`\mathcal P_0`$ infeasible for $`N\ge2`$: a product state in one global $`X`$ sector has every site in a pure $`X`$ eigenstate, and distinct-pair conjugation produces an orthogonal state.
 
-For $`N\ge3`$, $`\mathcal P_1`$ is also infeasible. The output factors into components of at most two sites. If $`\rho=\bigotimes_B\rho_B`$ has $`\operatorname{Tr}(Q\rho)=1`$, then $`\prod_B\operatorname{Tr}(Q_B\rho_B)=1`$; each real factor has absolute value at most one, so each component occupies a sharp local charge sector. A pair supported in different components flips both local sectors and has fidelity zero. For $`N=2`$, one dephasing gate suffices. Larger elementary supports change these finite thresholds; the existence of a fixed implementation threshold and the asymptotic laws do not depend on this convention. One-site endpoints have no distinct pair and are not assigned a positive entropy cost by the finite inequalities.
+For $`N\ge3`$, $`\mathcal P_1`$ is also infeasible. The output factors into components of at most two sites. If $`\rho=\bigotimes_B\rho_B`$ has $`\mathrm{Tr}(Q\rho)=1`$, then $`\prod_B\mathrm{Tr}(Q_B\rho_B)=1`$; each real factor has absolute value at most one, so each component occupies a sharp local charge sector. A pair supported in different components flips both local sectors and has fidelity zero. For $`N=2`$, one dephasing gate suffices. Larger elementary supports change these finite thresholds; the existence of a fixed implementation threshold and the asymptotic laws do not depend on this convention. One-site endpoints have no distinct pair and are not assigned a positive entropy cost by the finite inequalities.
 
 ## Theorem B7: Matched circuit frontiers
 
-Fix $`d\ge1`$, $`0<c\le1`$, and $`\kappa\ge1`$. Set
+Fix $`d\ge1`$, $`0\lt c\le1`$, and $`\kappa\ge1`$. Set
 
 ```math
 \ell_D=\min\{L,D+1\}.
@@ -212,7 +212,7 @@ Assume $`L\ge b_0`$ and take $`b=\min\{L,\max\{b_0,D+1\}\}`$ in (B5). Then $`\el
 q(b)w(c)-\log\kappa\ge\tfrac12q(b)w(c).
 ```
 
-Moreover $`p_D(b)\ge L/(6b)`$: if $`D<L`$, then $`b\ge D+1`$ and $`b+2D\le3b`$, and the floor of a number at least one is at least half that number; if $`D\ge L`$, then $`b=L`$ and $`p_D(b)=1`$. Finally
+Moreover $`p_D(b)\ge L/(6b)`$: if $`D\lt L`$, then $`b\ge D+1`$ and $`b+2D\le3b`$, and the floor of a number at least one is at least half that number; if $`D\ge L`$, then $`b=L`$ and $`p_D(b)=1`$. Finally
 
 ```math
 q(b)\ge\frac{d}{4}\log(b+1)\ge\frac{d}{4}\log(\ell_D+1).
@@ -236,7 +236,7 @@ This entire lower-bound argument is independent of symmetry.
 b=\min\{L,\lfloor D/A_d\rfloor\}.
 ```
 
-Then $`b\ge\ell_D/(4A_d)`$, $`K\le(2L/b)^d`$, and the product upper bound in (B9) gives the upper half of (B11). The shared upper bound in (B9) gives the upper half of (B12). For $`2\le D<A_d`$, the depth-two baseline (B10) has entropy $`N-1`$, which is within a constant factor of the right side of (B11). For $`0\le D<A_d`$, the shared-classical depth-zero baseline does the same for (B12). All upper outputs have $`c=1`$, $`\kappa=1`$, and exact strong symmetry.
+Then $`b\ge\ell_D/(4A_d)`$, $`K\le(2L/b)^d`$, and the product upper bound in (B9) gives the upper half of (B11). The shared upper bound in (B9) gives the upper half of (B12). For $`2\le D\lt A_d`$, the depth-two baseline (B10) has entropy $`N-1`$, which is within a constant factor of the right side of (B11). For $`0\le D\lt A_d`$, the shared-classical depth-zero baseline does the same for (B12). All upper outputs have $`c=1`$, $`\kappa=1`$, and exact strong symmetry.
 
 At $`D\gtrsim L`$, (B11) is $`\Theta(\log N)`$, as is (B12). Extrapolating $`N/D^d`$ beyond the diameter without this saturation would be incorrect.
 
@@ -245,7 +245,7 @@ At $`D\gtrsim L`$, (B11) is $`\Theta(\log N)`$, as is (B12). Extrapolating $`N/D
 The all-pair promise can be weakened in a quantitative finite-size way. Suppose instead that
 
 ```math
-f_{ij}(\rho)\ge c\quad\text{whenever }\operatorname{dist}(i,j)\ge r_f,
+f_{ij}(\rho)\ge c\quad\text{whenever }\mathrm{dist}(i,j)\ge r_f,
 \tag{B13}
 ```
 

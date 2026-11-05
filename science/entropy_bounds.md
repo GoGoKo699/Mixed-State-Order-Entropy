@@ -11,7 +11,7 @@ F(\alpha,\beta)=\|\sqrt\alpha\sqrt\beta\|_1.
 For the lattice application, write
 
 ```math
-C_{ij}=\operatorname{Tr}(\rho Z_iZ_j),\qquad
+C_{ij}=\mathrm{Tr}(\rho Z_iZ_j),\qquad
 f_{ij}=\|\sqrt\rho Z_iZ_j\sqrt\rho\|_1,
 \qquad w(c)=1-h_2((1+c)/2).
 ```
@@ -76,7 +76,7 @@ Let $`\rho`$ be any finite-dimensional state and let $`U_a`$, indexed by $`a\in\
 
 ```math
 \sigma_a=U_a\rho U_a^\dagger,
-\qquad G_{ab}=\operatorname{Tr}(\rho U_a^\dagger U_b).
+\qquad G_{ab}=\mathrm{Tr}(\rho U_a^\dagger U_b).
 ```
 
 If the ensemble satisfies (E3), then
@@ -148,7 +148,7 @@ S(\rho)\ge H(P)-\sum_{j=1}^kh_2((1+g_j)/2).
 **Proof.** Apply $`\mathcal D_j(\sigma)=(\sigma+V_j\sigma V_j)/2`$ successively. Each entropy increase is the equal-prior Holevo information of two unitarily related states. Earlier twirls commute with conjugation by $`V_j`$, so fidelity data processing gives
 
 ```math
-F(\mathcal D_{<j}\rho,V_j\mathcal D_{<j}\rho V_j)\ge g_j.
+F(\mathcal D_{\lt j}\rho,V_j\mathcal D_{\lt j}\rho V_j)\ge g_j.
 ```
 
 The function $`h_2((1+g)/2)`$ decreases on $`[0,1]`$; Proposition E1 bounds the $`j`$-th increase by the corresponding term of (E8). The final state is block diagonal in the joint eigenspaces of the $`V_j`$. Its entropy is $`H(P)`$ plus a nonnegative average within-block entropy. Telescoping proves the claim. Linear dependencies among the involutions cause no problem because $`P`$ is the actual joint outcome law.
@@ -162,7 +162,7 @@ S(\rho)\ge[\log N-\log\kappa]_+.
 \tag{E9}
 ```
 
-**Proof.** Unit root fidelity means equality of the two states, so $`\rho`$ commutes with every $`Z_iZ_j`$. Their common eigenspaces are the parity sectors $`\operatorname{span}\{|s\rangle,|-s\rangle\}`$, where $`s\in\{\pm1\}^N`$ and one representative is chosen from each pair $`s,-s`$. Write their weights as $`p_s`$. Block diagonality gives $`S(\rho)\ge H(p)`$. On a parity sector, $`Z_iZ_j`$ has the scalar value $`s_is_j`$, hence
+**Proof.** Unit root fidelity means equality of the two states, so $`\rho`$ commutes with every $`Z_iZ_j`$. Their common eigenspaces are the parity sectors $`\mathrm{span}\{|s\rangle,|-s\rangle\}`$, where $`s\in\{\pm1\}^N`$ and one representative is chosen from each pair $`s,-s`$. Write their weights as $`p_s`$. Block diagonality gives $`S(\rho)\ge H(p)`$. On a parity sector, $`Z_iZ_j`$ has the scalar value $`s_is_j`$, hence
 
 ```math
 C=\sum_s p_s\,s s^{\mathsf T}.

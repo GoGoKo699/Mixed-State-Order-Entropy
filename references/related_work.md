@@ -6,6 +6,8 @@ The comparison below was checked against primary sources on 5 November 2026. Ver
 
 ## Information-theoretic ingredients
 
+The educational foundation is [John Watrous, *The Theory of Quantum Information* (2018)](https://cs.uwaterloo.ca/~watrous/TQI/). The [selected-source bridge](../learning/anchor.md) identifies the relevant states, channels, fidelity, and entropy material. This textbook role is separate from attribution of the research ingredients below.
+
 | Source | Established ingredient used here | Relationship to this project |
 |---|---|---|
 | [Roga, Fannes, and Życzkowski (2010)](https://arxiv.org/abs/1004.4782), PRL 105, 040505, Eq. (26) | An upper bound on binary Holevo information in terms of fidelity | The binary step of the [orbit proof](../science/entropy_bounds.md). Their squared-fidelity convention is converted to root fidelity. This inequality is inherited. |

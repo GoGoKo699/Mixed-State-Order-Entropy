@@ -14,4 +14,6 @@ Read the account in the following order.
 
 The [related-work comparison](../references/related_work.md) owns the attribution and comparison with existing results. The [verification record](../verification/README.md) reports finite calculations and their limits.
 
+For a route from quantum-information foundations to these proofs, use the [Watrous bridge](../learning/anchor.md), the [worked block example](../learning/worked_example.md), and the [30-milestone map](../learning/milestones.md).
+
 Each proof page states the assumptions it uses. In particular, the static and product-input orbit bounds do not require symmetry once their Gram and fidelity promises hold. Exact strong symmetry is essential to the shared-classical causal-volume argument. The upper constructions satisfy all the main assumptions simultaneously.

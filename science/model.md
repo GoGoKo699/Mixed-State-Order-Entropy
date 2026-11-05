@@ -11,7 +11,7 @@ Q=\prod_{i\in\Lambda}X_i,
 \qquad Q\rho=\rho.
 ```
 
-This is a strong symmetry: the entire support of $`\rho`$ lies in one charge sector. Choosing the other sector gives the same bounds. In particular $`\operatorname{Tr}(\rho Z_i)=0`$. The weaker condition $`Q\rho Q=\rho`$ alone does not supply the shared-seed lower bound.
+This is a strong symmetry: the entire support of $`\rho`$ lies in one charge sector. Choosing the other sector gives the same bounds. In particular $`\mathrm{Tr}(\rho Z_i)=0`$. The weaker condition $`Q\rho Q=\rho`$ alone does not supply the shared-seed lower bound.
 
 Throughout, fidelity means **root Uhlmann fidelity**:
 
@@ -22,12 +22,12 @@ f_{ij}=F(\rho,Z_iZ_j\rho Z_jZ_i)
 =\left\|\sqrt\rho Z_iZ_j\sqrt\rho\right\|_1.
 ```
 
-Fix $`0<c\leq1`$ independently of $`N`$ and require $`f_{ij}\geq c`$ for distinct selected sites. The headline optimization uses all distinct sites. If the promise starts only beyond a fixed microscopic separation, select a fixed-spacing sublattice; the same asymptotic laws hold with changed constants. Statements based only on a nonuniform or iterated infinite-distance limit require their own uniformity argument.
+Fix $`0\lt c\leq1`$ independently of $`N`$ and require $`f_{ij}\geq c`$ for distinct selected sites. The headline optimization uses all distinct sites. If the promise starts only beyond a fixed microscopic separation, select a fixed-spacing sublattice; the same asymptotic laws hold with changed constants. Statements based only on a nonuniform or iterated infinite-distance limit require their own uniformity argument.
 
 The ordinary correlation Gram matrix is
 
 ```math
-C_{ij}=\operatorname{Tr}(\rho Z_iZ_j),
+C_{ij}=\mathrm{Tr}(\rho Z_iZ_j),
 \qquad 0\preceq C\preceq\kappa I,
 ```
 
@@ -40,7 +40,7 @@ These are finite-system global fidelity conditions, following the global SWSSB f
 The output cost, in bits, is
 
 ```math
-S(\rho)=-\operatorname{Tr}(\rho\log_2\rho).
+S(\rho)=-\mathrm{Tr}(\rho\log_2\rho).
 ```
 
 It is an actual property of the retained state. For a pure dilation it equals entanglement entropy with the complete discarded apparatus. A thermodynamic work or heat cost needs additional assumptions and is not part of this optimization.

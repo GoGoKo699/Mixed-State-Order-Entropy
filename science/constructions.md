@@ -19,7 +19,7 @@ Fidelity is the **root** convention. The states constructed below obey
 ```math
 Q\rho=\rho,
 \qquad F_{ij}(\rho)=1\quad(i\ne j),
-\qquad C_{ij}:=\operatorname{Tr}(\rho Z_iZ_j)=\delta_{ij}.
+\qquad C_{ij}:=\mathrm{Tr}(\rho Z_iZ_j)=\delta_{ij}.
 \tag{1}
 ```
 
@@ -118,7 +118,7 @@ Define the blockwise canonicalization map
 The phase incurred when a whole block is complemented is irrelevant to its density matrix. Acting on the initial GHZ+ product, (8) therefore produces the cat product labeled by $`u=TAy`$. Let
 
 ```math
-\mathcal U=\operatorname{im}(TA),\qquad q=\operatorname{rank}_{\mathbb F_2}(TA).
+\mathcal U=\mathrm{im}(TA),\qquad q=\mathrm{rank}_{\mathbb F_2}(TA).
 \tag{10}
 ```
 
@@ -162,7 +162,7 @@ Every summand is orthogonal to every other. Hence
 
 ```math
 \boxed{S(\rho_{A,\mathsf T})=q+K-1,\qquad
-\operatorname{rank}\rho_{A,\mathsf T}=2^{q+K-1}.}
+\mathrm{rank}\rho_{A,\mathsf T}=2^{q+K-1}.}
 \tag{14}
 ```
 
@@ -188,7 +188,7 @@ F(\rho,Z_i\rho Z_i)=0.
 Every cat has zero one-point $`Z_i`$. Correlations between different blocks therefore vanish even when the mask seeds or phase bits are correlated. Within one block,
 
 ```math
-\operatorname{Tr}(\rho Z_iZ_j)
+\mathrm{Tr}(\rho Z_iZ_j)
 =\mathbb E_y(-1)^{(a_i+a_j)\cdot y}
 =\begin{cases}1,&a_i=a_j,\\0,&a_i\ne a_j.\end{cases}
 \tag{17}
@@ -216,7 +216,7 @@ x_i=a_i\cdot y_b\quad(i\in B_b).
 \tag{19}
 ```
 
-Distinct labels give (17). The seed-to-canonical-pattern map has rank $`r_b`$: the labels include zero and all binary basis vectors $`1,2,4,\ldots,2^{r_b-1}`$, because $`2^{r_b-1}<m_b`$ when $`m_b\ge2`$. The seeds of different blocks are independent, so
+Distinct labels give (17). The seed-to-canonical-pattern map has rank $`r_b`$: the labels include zero and all binary basis vectors $`1,2,4,\ldots,2^{r_b-1}`$, because $`2^{r_b-1}\lt m_b`$ when $`m_b\ge2`$. The seeds of different blocks are independent, so
 
 ```math
 q=\sum_b r_b,
@@ -231,9 +231,9 @@ This is an exact equality for every block size, including singleton blocks. The 
 
 The following explicit schedule prevents a hidden $`r_b h_b`$ depth cost or an unbounded on-site register.
 
-Fix the rooted block tree and each node's depth $`d_i`$. Give every site two ancillary classical-bit registers, `current` and `next`, initially zero. The randomness source at the root generates bit $`y_{b,t}`$ in round $`t`$ for $`0\le t<r_b`$. A local preparation of $`I/2`$ produces this fair bit; equivalently, prepare $`|+\rangle`$ and locally dephase it in $`Z`$. No nonlocal state is supplied.
+Fix the rooted block tree and each node's depth $`d_i`$. Give every site two ancillary classical-bit registers, `current` and `next`, initially zero. The randomness source at the root generates bit $`y_{b,t}`$ in round $`t`$ for $`0\le t\lt r_b`$. A local preparation of $`I/2`$ produces this fair bit; equivalently, prepare $`|+\rangle`$ and locally dephase it in $`Z`$. No nonlocal state is supplied.
 
-In round $`t=0,\ldots,h_b+r_b-1`$, the active current bit at site $`i`$ is $`y_{b,j}`$, where $`j=t-d_i`$ and $`0\le j<r_b`$. An inactive current register is zero. Each round consists of:
+In round $`t=0,\ldots,h_b+r_b-1`$, the active current bit at site $`i`$ is $`y_{b,j}`$, where $`j=t-d_i`$ and $`0\le j\lt r_b`$. An inactive current register is zero. Each round consists of:
 
 1. At an active root, prepare the next independent source bit.
 2. At every active site, apply a controlled $`X_i`$ from `current` to the retained qubit if the hardwired coefficient $`a_{i,j}`$ is one.
@@ -275,7 +275,7 @@ This sharper exact form implies the advertised $`O(K+\log N)`$ upper. It is also
 One can instead assign all $`N`$ sites distinct global binary labels with $`r=\lceil\log_2N\rceil`$. That familiar global Hadamard construction gives
 
 ```math
-S=K-1+\operatorname{rank}\{a_i+a_{o_b}:i\in B_b,\ b\in[K]\}
+S=K-1+\mathrm{rank}\{a_i+a_{o_b}:i\in B_b,\ b\in[K]\}
 \le K-1+\lceil\log_2N\rceil.
 \tag{23}
 ```
@@ -344,7 +344,7 @@ with exact maximal fidelity order and $`C=I`$. Choosing $`\ell`$ a sufficiently 
 
 The factor $`N/D^d`$ is capped at diameter depth; it does not continue below one. A notation such as $`D+1`$ does not assert zero-depth feasibility in the strict product model. For $`N\ge3`$, its ordered class is empty at depth zero or one under the stated two-site-gate convention; the shared-classical class has a depth-zero baseline. These exceptions and a depth-two strict baseline are given in [Circuit bounds](circuit_bounds.md#construction-inputs-and-finite-depth-feasibility). Equations (20)–(24a), with the explicit depth schedule, give the finite-size upper statement.
 
-The lower bounds are proved in [Circuit bounds](circuit_bounds.md). Since these states have $`F_{ij}=1`$, they serve as upper examples for every fixed target $`0<c\le1`$. Their entropy scaling does not establish an optimal coefficient as $`c\to0`$.
+The lower bounds are proved in [Circuit bounds](circuit_bounds.md). Since these states have $`F_{ij}=1`$, they serve as upper examples for every fixed target $`0\lt c\le1`$. Their entropy scaling does not establish an optimal coefficient as $`c\to0`$.
 
 ## 7. Masks that suppress general local charged correlations
 

@@ -9,7 +9,7 @@ The [model](model.md) defines the physical target and resource classes. The [ent
 Let $`N=L^d`$ retained qubits occupy the open cubic lattice $`\Lambda_L=\{1,\ldots,L\}^d`$. Set
 
 ```math
-C_{ij}=\operatorname{Tr}(\rho Z_iZ_j),\qquad
+C_{ij}=\mathrm{Tr}(\rho Z_iZ_j),\qquad
 f_{ij}=F(\rho,Z_iZ_j\rho Z_iZ_j),
 ```
 
@@ -29,7 +29,7 @@ Fix $`c\in(0,1]`$, $`\kappa\ge1`$, and define
 
 ```math
 h(c)=h_2\!\left(\frac{1+c}{2}\right),\qquad
-w(c)=1-h(c)>0.
+w(c)=1-h(c)\gt 0.
 \tag{1}
 ```
 
@@ -89,10 +89,10 @@ The combined system and apparatus evolves under
 
 The spatial support family $`\mathcal E`$ is fixed; time dependence may switch individual terms on and off. Each summand is itself a valid local Lindblad generator, including a Hamiltonian commutator as a special case. This condition ensures that deleting terms leaves a valid completely positive, trace-preserving evolution. Merely decomposing a globally valid generator into arbitrary signed local superoperators would not suffice.
 
-Fix constants $`a\in\mathbb N`$, $`a\ge1`$, $`\nu\in\mathbb N`$, and $`J>0`$, independent of system size, with
+Fix constants $`a\in\mathbb N`$, $`a\ge1`$, $`\nu\in\mathbb N`$, and $`J\gt 0`$, independent of system size, with
 
 ```math
-\operatorname{diam}_{\infty}(X)\le a,\quad
+\mathrm{diam}_{\infty}(X)\le a,\quad
 |\{X\in\mathcal E:x\in X\}|\le\nu,\quad
 \sup_{t,X}\|\mathcal L_X^*(t)\|_{\infty\to\infty}\le J.
 \tag{7}
@@ -125,20 +125,20 @@ Barthel and Kliesch [BK12, Theorem 1, Eq. (12)] give, for an observable $`O_Y`$ 
 ```math
 \|K_X\tau(s,T)(O_Y)\|
 \le V_{X,Y}\|K_X\|\,\|O_Y\|
-e^{v(T-s)-\operatorname{dist}(X,Y)/a}.
+e^{v(T-s)-\mathrm{dist}(X,Y)/a}.
 \tag{10}
 ```
 
 Here $`\tau`$ is the Heisenberg propagator. Their prefactor is controlled by the smaller interaction neighborhood of $`X`$ and $`Y`$. In particular, for one support $`X\in\mathcal E`$, the safe weakened bound $`V_{X,Y}\le\mathcal Z`$ is sufficient for this note. It is independent of $`|Y|`$, even when $`Y`$ is disconnected and contains a macroscopic fraction of the lattice.
 
-For completeness, the safe estimate follows from their written $`V_{X,Y}\le\operatorname{Vol}(\bar X)/\mathcal Z`$: the interaction neighborhood $`\bar X`$ is a union of at most $`\mathcal Z`$ supports intersecting $`X`$. Every nonempty interaction support contained in that union intersects at least one of those supports, so $`\operatorname{Vol}(\bar X)\le\mathcal Z^2`$. The paper also uses a sharper unit prefactor for individual generator terms; no such improvement is needed here.
+For completeness, the safe estimate follows from their written $`V_{X,Y}\le\mathrm{Vol}(\bar X)/\mathcal Z`$: the interaction neighborhood $`\bar X`$ is a union of at most $`\mathcal Z`$ supports intersecting $`X`$. Every nonempty interaction support contained in that union intersects at least one of those supports, so $`\mathrm{Vol}(\bar X)\le\mathcal Z^2`$. The paper also uses a sharper unit prefactor for individual generator terms; no such improvement is needed here.
 
 ## 3. Shell-cut trace factorization
 
 **Lemma 1.** Let $`B`$ be a cube of $`\ell`$ sites on a side, and let $`F`$ be any region satisfying
 
 ```math
-\operatorname{dist}_{\infty}(B,F)\ge2r+2a,
+\mathrm{dist}_{\infty}(B,F)\ge2r+2a,
 \qquad r\ge2a,
 \tag{11}
 ```
@@ -227,7 +227,7 @@ It has the same nonzero spectrum as its normalized Gram matrix
 
 ```math
 \Gamma_{\mathbf a,\mathbf a'}
-=m^{-K}\operatorname{Tr}\rho\,
+=m^{-K}\mathrm{Tr}\rho\,
 U_{\mathbf a'}U_{\mathbf a},
 \qquad S(\Omega_{SE})=S(\Gamma).
 \tag{19}
@@ -305,7 +305,7 @@ Equations (19)–(26) hold without a preparation or independence assumption. Ind
 Arrange the boxes in any order and let $`F_b`$ be the union of boxes preceding box $`b`$. Suppose the geometric conditions of Lemma 1 hold between $`B_b`$ and $`F_b`$, with common $`\ell,r`$, and $`\epsilon_{\ell,r,T}\le\epsilon\le1/2`$. Contractivity in (21) yields
 
 ```math
-\frac12\|\Gamma_{b,<b}-\omega_b\otimes\omega_{<b}\|_1\le\epsilon
+\frac12\|\Gamma_{b,\lt b}-\omega_b\otimes\omega_{\lt b}\|_1\le\epsilon
 \tag{27}
 ```
 
@@ -330,7 +330,7 @@ The bound does not depend on the dimension of $`B`$. The ordinary marginal entro
 Since the reference state in (27) is a product, (28)–(29) imply
 
 ```math
-S(\Gamma_b|\Gamma_{<b})\ge S(\Gamma_b)-a(\epsilon,m),
+S(\Gamma_b|\Gamma_{\lt b})\ge S(\Gamma_b)-a(\epsilon,m),
 \tag{30}
 ```
 
@@ -469,7 +469,7 @@ If the packing is too large for the lattice, a one-box orbit construction on $`M
 
 This is an information-theoretic application of the binary Holevo inequality and purification, not an independent novelty claim.
 
-If $`L<2p`$, then $`1+vT>L/(4P)`$. For $`L\ge2`$, putting $`\eta=\min\{L,1+vT\}`$ gives
+If $`L\lt 2p`$, then $`1+vT\gt L/(4P)`$. For $`L\ge2`$, putting $`\eta=\min\{L,1+vT\}`$ gives
 
 ```math
 \frac{N}{\eta^d}\log_2(\eta+1)
@@ -589,7 +589,7 @@ with the evident integral formulation for a continuous seed. No branch fidelity 
 
 ### Strong symmetry balances each branch
 
-Put $`\Pi_-=(I-Q)/2`$. Positivity gives $`\operatorname{Tr}(\Pi_-\rho_\lambda)=0`$ in every positive-weight branch, since these nonnegative quantities average to zero. Hence $`Q\rho_\lambda=\rho_\lambda`$. The anticommutation $`QZ_iQ=-Z_i`$ makes each branch's single-site $`Z_i`$ outcome exactly balanced. This implication requires support in one strong sector; weak invariance under conjugation by $`Q`$ alone does not suffice.
+Put $`\Pi_-=(I-Q)/2`$. Positivity gives $`\mathrm{Tr}(\Pi_-\rho_\lambda)=0`$ in every positive-weight branch, since these nonnegative quantities average to zero. Hence $`Q\rho_\lambda=\rho_\lambda`$. The anticommutation $`QZ_iQ=-Z_i`$ makes each branch's single-site $`Z_i`$ outcome exactly balanced. This implication requires support in one strong sector; weak invariance under conjugation by $`Q`$ alone does not suffice.
 
 ### Conditional cut factorization for single-site outcomes
 
@@ -603,7 +603,7 @@ ad\nu(1+2r)^{d-1}(e^{vT}-1)e^{-r/a}\le\epsilon\le1/2,
 then the corresponding classical joint outcome law is within total-variation distance $`\epsilon`$ of some product law. The same marginal and conditional entropy continuity argument as (28)–(31), now with a two-dimensional first register, gives
 
 ```math
-H(Z_i\mid Z_{<i},R=\lambda)\ge1-\alpha(\epsilon),
+H(Z_i\mid Z_{\lt i},R=\lambda)\ge1-\alpha(\epsilon),
 \quad
 \alpha(\epsilon)=3\epsilon+h_2(\epsilon)
 +(1+\epsilon)h_2\!\left(\frac{\epsilon}{1+\epsilon}\right).
@@ -659,7 +659,7 @@ S(\rho(T))\ge
 \tag{62}
 ```
 
-If $`L<2p_s`$, a single site gives the zero bound. In this case $`\eta=\min\{L,1+vT\}>L/(4P_s)`$, so nonnegativity supplies the capped version of (62):
+If $`L\lt 2p_s`$, a single site gives the zero bound. In this case $`\eta=\min\{L,1+vT\}\gt L/(4P_s)`$, so nonnegativity supplies the capped version of (62):
 
 ```math
 S(\rho(T))\ge A_s'\frac{N}{\eta^d}-\frac w2,
@@ -691,7 +691,7 @@ with fixed microscopic interaction units and the same finite-size/implementation
 
 ### Optional actual-state sector-leakage correction
 
-If instead $`p=\operatorname{Tr}(\Pi_-\rho)`$ is nonzero, let $`p_\lambda`$ be the branch leakage. Anticommutation gives $`|\langle Z_i\rangle_\lambda|^2\le4p_\lambda(1-p_\lambda)`$, and $`h_2((1+x)/2)\ge1-x^2`$ gives a single-bit entropy at least $`1-4p_\lambda(1-p_\lambda)`$. Apply the same cut and chain argument, then use concavity of $`p(1-p)`$. The actual-state bound becomes
+If instead $`p=\mathrm{Tr}(\Pi_-\rho)`$ is nonzero, let $`p_\lambda`$ be the branch leakage. Anticommutation gives $`|\langle Z_i\rangle_\lambda|^2\le4p_\lambda(1-p_\lambda)`$, and $`h_2((1+x)/2)\ge1-x^2`$ gives a single-bit entropy at least $`1-4p_\lambda(1-p_\lambda)`$. Apply the same cut and chain argument, then use concavity of $`p(1-p)`$. The actual-state bound becomes
 
 ```math
 S(\rho(T))\ge(M-1)[w(c)-\alpha(\epsilon)]

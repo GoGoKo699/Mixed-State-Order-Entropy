@@ -11,12 +11,12 @@ The [static orbit bound](entropy_bounds.md#corollary-e4-global-logarithmic-floor
 Define leakage into the opposite sector by
 
 ```math
-\epsilon=\operatorname{Tr}(\Pi_-\rho),\qquad \Pi_-=(I-Q)/2,
+\epsilon=\mathrm{Tr}(\Pi_-\rho),\qquad \Pi_-=(I-Q)/2,
 \qquad 0\le\epsilon\le\tfrac12.
 \tag{R1}
 ```
 
-No commutation of $`\rho`$ with $`Q`$ is assumed. Write $`\epsilon_r=\operatorname{Tr}(\Pi_-\rho_r)`$ for a shared-seed branch.
+No commutation of $`\rho`$ with $`Q`$ is assumed. Write $`\epsilon_r=\mathrm{Tr}(\Pi_-\rho_r)`$ for a shared-seed branch.
 
 ### Proposition R1: Dimension-free leakage correction
 
@@ -61,7 +61,7 @@ Passing to the $`m-1`$ reference parities loses at most one bit. Apply the [comm
 For a fixed allowed leakage $`\epsilon_0\le1/2`$ satisfying
 
 ```math
-4\epsilon_0(1-\epsilon_0)<w(c),
+4\epsilon_0(1-\epsilon_0)\lt w(c),
 \tag{R4}
 ```
 
@@ -71,7 +71,7 @@ This sufficient leakage range is not asserted to be sharp. A small commutator $`
 
 ### Counterexample R2: Failure at leakage c/2
 
-Let $`r=\lceil\log N\rceil`$, choose distinct $`a_i\in\mathbb F_2^r`$, and sample independent uniform $`y\in\mathbb F_2^r`$, $`u\in\mathbb F_2`$. Let $`\sigma_{\rm diag}`$ be the computational-basis mixture with signs $`(-1)^{u+a_i\cdot y}`$. It is a mixture of product states with entropy at most $`r+1`$, has $`C=I`$, commutes with every pair $`Z_iZ_j`$, and has $`\operatorname{Tr}(Q\sigma_{\rm diag})=0`$. It is also weakly symmetric because the uniform bit $`u`$ implements global bit flip.
+Let $`r=\lceil\log N\rceil`$, choose distinct $`a_i\in\mathbb F_2^r`$, and sample independent uniform $`y\in\mathbb F_2^r`$, $`u\in\mathbb F_2`$. Let $`\sigma_{\rm diag}`$ be the computational-basis mixture with signs $`(-1)^{u+a_i\cdot y}`$. It is a mixture of product states with entropy at most $`r+1`$, has $`C=I`$, commutes with every pair $`Z_iZ_j`$, and has $`\mathrm{Tr}(Q\sigma_{\rm diag})=0`$. It is also weakly symmetric because the uniform bit $`u`$ implements global bit flip.
 
 The shared-classical depth-zero state
 
@@ -99,7 +99,7 @@ Exact strong symmetry makes every $`\langle Z_i\rangle`$ zero, so $`C`$ is also 
 \tag{R6}
 ```
 
-For example, a fixed exponential correlation-length bound, with system-size-independent prefactor and length, gives a fixed $`\kappa`$ on a fixed-dimensional lattice. An algebraic bound $`|C_{ij}|\le A(1+\operatorname{dist}(i,j))^{-\alpha}`$ is sufficient when $`\alpha>d`$. These implications follow directly from row-sum norm bounds and lattice shell counting.
+For example, a fixed exponential correlation-length bound, with system-size-independent prefactor and length, gives a fixed $`\kappa`$ on a fixed-dimensional lattice. An algebraic bound $`|C_{ij}|\le A(1+\mathrm{dist}(i,j))^{-\alpha}`$ is sufficient when $`\alpha\gt d`$. These implications follow directly from row-sum norm bounds and lattice shell counting.
 
 Merely having $`C_{ij}\to0`$ as separation grows is weaker. Even a uniform entrywise estimate $`|C_{ij}|\le\eta`$ for $`i\ne j`$ gives only $`\|C\|\le1+(N-1)\eta`$. It does not provide a fixed $`\kappa`$. If the known norm is $`\kappa_N`$, the exact finite inequalities remain true with $`\log\kappa_N`$, but the claimed fixed-$`\kappa`$ asymptotics cannot be inferred automatically.
 
@@ -133,6 +133,6 @@ The fidelity promise is about the full retained state. It does not become a one-
 
 Output entropy is unconditional after the preparation records have been discarded. It equals entanglement with a complete discarded apparatus when the overall initial state and dilation are pure. Additional thermodynamic assumptions would be needed to identify it with heat or work. In the shared-classical model, conditioning on a retained seed is a different cost function. The model and bounds do not charge such a conditional entropy.
 
-The complete matching claim here is a local-channel circuit statement. Exact dephasing is a permitted CPTP gate, with a local apparatus implementation. A finite-rate system-only Lindbladian does not perform exact complete dephasing in finite time; the [continuous-time results](continuous_time.md) therefore have their own assumptions and proofs.
+The matching circuit claims use local channels, for which exact dephasing is a permitted CPTP gate with a local apparatus implementation. The separate [continuous-time theorem](continuous_time.md) proves matching bounds using bounded local Hamiltonians, explicit apparatus, and final discard. A finite-rate system-only Lindbladian does not perform exact complete dephasing in finite time; that more restrictive upper-bound model is not asserted here.
 
 The [related-work comparison](../references/related_work.md) credits the fidelity interpretation, information inequalities, causal bounds, and classical masking antecedents. The contribution claimed is the model-matched preparation frontier and the quantitative role of initially shared classical coordination.
