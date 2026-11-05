@@ -13,7 +13,7 @@ Define leakage into the opposite sector by
 ```math
 \epsilon=\mathrm{Tr}(\Pi_-\rho),\qquad \Pi_-=(I-Q)/2,
 \qquad 0\le\epsilon\le\tfrac12.
-\tag{R1}
+\qquad\text{(R1)}
 ```
 
 No commutation of $`\rho`$ with $`Q`$ is assumed. Write $`\epsilon_r=\mathrm{Tr}(\Pi_-\rho_r)`$ for a shared-seed branch.
@@ -24,7 +24,7 @@ Under the hypotheses of the [finite causal-volume theorem](circuit_bounds.md#the
 
 ```math
 S(\rho)\ge(m-1)w(c)-4m\epsilon(1-\epsilon).
-\tag{R2}
+\qquad\text{(R2)}
 ```
 
 **Proof.** Since $`Q`$ and $`Z_i`$ anticommute and square to the identity,
@@ -43,7 +43,7 @@ The elementary binary entropy inequality
 
 ```math
 h_2((1+x)/2)\ge1-x^2,\qquad |x|\le1,
-\tag{R3}
+\qquad\text{(R3)}
 ```
 
 then bounds each selected bit's entropy. One proof of (R3) expands the entropy deficit as a power series with positive coefficients summing to one at $`x=1`$; every power $`x^{2n}`$ is at most $`x^2`$.
@@ -62,7 +62,7 @@ For a fixed allowed leakage $`\epsilon_0\le1/2`$ satisfying
 
 ```math
 4\epsilon_0(1-\epsilon_0)\lt w(c),
-\tag{R4}
+\qquad\text{(R4)}
 ```
 
 the [shared-classical frontier](circuit_bounds.md#theorem-b7-matched-circuit-frontiers) is unchanged, with constants depending also on $`\epsilon_0`$. For large $`m`$, (R2) has a positive constant coefficient of $`m`$; for bounded $`m`$, the unchanged global logarithmic floor controls the remaining term. The exactly symmetric upper construction remains in the allowed class.
@@ -77,7 +77,7 @@ The shared-classical depth-zero state
 
 ```math
 \rho_c=(1-c)|+\rangle\langle+|^{\otimes N}+c\,\sigma_{\rm diag}
-\tag{R5}
+\qquad\text{(R5)}
 ```
 
 has $`C=I`$, leakage $`\epsilon=c/2`$, and $`f_{ij}\ge c`$ by joint concavity of fidelity. Its entropy is at most
@@ -96,7 +96,7 @@ Exact strong symmetry makes every $`\langle Z_i\rangle`$ zero, so $`C`$ is also 
 
 ```math
 \sup_i\sum_j|C_{ij}|\le\kappa.
-\tag{R6}
+\qquad\text{(R6)}
 ```
 
 For example, a fixed exponential correlation-length bound, with system-size-independent prefactor and length, gives a fixed $`\kappa`$ on a fixed-dimensional lattice. An algebraic bound $`|C_{ij}|\le A(1+\mathrm{dist}(i,j))^{-\alpha}`$ is sufficient when $`\alpha\gt d`$. These implications follow directly from row-sum norm bounds and lattice shell counting.

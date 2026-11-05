@@ -24,7 +24,7 @@ For a state prepared in $`\mathcal P_D`$, let $`A_1,\ldots,A_K`$ be output regio
 
 ```math
 \rho_{A_1\cdots A_K}=\bigotimes_{b=1}^K\rho_{A_b}.
-\tag{B1}
+\qquad\text{(B1)}
 ```
 
 A sufficient geometric condition is $`\mathrm{dist}(A_b,A_{b'})\gt 2D`$.
@@ -38,7 +38,7 @@ Suppose (B1) holds. In each $`A_b`$, choose $`M_b=2^{q_b}`$ sites with ordinary 
 ```math
 2S(\rho)\ge
 \sum_{b=1}^K\left[S(C_b/M_b)-q_bh_2((1+c_b)/2)\right].
-\tag{B2}
+\qquad\text{(B2)}
 ```
 
 If $`C_b\preceq\kappa_b I`$, one may in particular use
@@ -46,7 +46,7 @@ If $`C_b\preceq\kappa_b I`$, one may in particular use
 ```math
 S(\rho)\ge\frac12\sum_{b=1}^K
 [q_bw(c_b)-\log\kappa_b]_+.
-\tag{B3}
+\qquad\text{(B3)}
 ```
 
 **Proof.** For the multi-label $`a=(a_1,\ldots,a_K)`$, set
@@ -75,7 +75,7 @@ For $`1\le b\le L`$, define
 ```math
 p_D(b)=\left\lfloor\frac{L+2D}{b+2D}\right\rfloor,
 \qquad q(b)=\lfloor\log(b^d)\rfloor.
-\tag{B4}
+\qquad\text{(B4)}
 ```
 
 Any $`\rho\in\mathcal P_D`$ satisfying the Gram and fidelity promises in the [model](model.md), even without the symmetry promise, obeys
@@ -83,7 +83,7 @@ Any $`\rho\in\mathcal P_D`$ satisfying the Gram and fidelity promises in the [mo
 ```math
 S(\rho)\ge\frac12\max_{1\le b\le L}
 p_D(b)^d[q(b)w(c)-\log\kappa]_+.
-\tag{B5}
+\qquad\text{(B5)}
 ```
 
 **Proof.** Along each axis place intervals of $`b`$ sites beginning at $`1+j(b+2D)`$, for $`j=0,\ldots,p_D(b)-1`$. Their Cartesian products give $`p_D(b)^d`$ boxes. Distinct boxes are separated by at least $`2D+1`$, so Lemma B1 applies. Each box contains $`b^d`$ sites; select any $`2^{q(b)}`$ of them. Principal Gram matrices inherit the bound $`\kappa I`$. Apply (B3) and optimize $`b`$. Taking $`b=L`$ also recovers the global logarithmic floor, so (B5) remains meaningful at and beyond the diameter.
@@ -104,7 +104,7 @@ Let $`\rho\in\mathcal C_D`$ have exact strong symmetry. Choose $`m`$ sites with 
 
 ```math
 S(\rho)\ge(m-1)w(c).
-\tag{B6}
+\qquad\text{(B6)}
 ```
 
 For the nearest-neighbor grid, the all-pair fidelity promise allows
@@ -112,7 +112,7 @@ For the nearest-neighbor grid, the all-pair fidelity promise allows
 ```math
 m_D=\left\lceil\frac L{2D+1}\right\rceil^d,
 \qquad S(\rho)\ge(m_D-1)w(c).
-\tag{B7}
+\qquad\text{(B7)}
 ```
 
 No Gram-norm promise is needed for this theorem.
@@ -126,7 +126,7 @@ Combining (B7) and the [global logarithmic floor](entropy_bounds.md#corollary-e4
 ```math
 S(\rho)\ge\max\left\{(m_D-1)w(c),
 \frac12[\lfloor\log N\rfloor w(c)-\log\kappa]_+\right\}.
-\tag{B8}
+\qquad\text{(B8)}
 ```
 
 ## Construction inputs and finite-depth feasibility
@@ -139,7 +139,7 @@ Partition each coordinate into intervals of at most $`b`$ sites. There are $`K=\
 S_{\rm prod}=K-1+\sum_B\lceil\log m_B\rceil,
 \qquad
 S_{\rm sh}=K-1+\lceil\log m_*\rceil,
-\tag{B9}
+\qquad\text{(B9)}
 ```
 
 and in particular the bounds
@@ -161,7 +161,7 @@ Taking singleton blocks and a nearest-neighbor Hamiltonian path in the construct
 \qquad S(\rho_*)=N-1,
 \qquad C(\rho_*)=I,
 \qquad f_{ij}(\rho_*)=1.
-\tag{B10}
+\qquad\text{(B10)}
 ```
 
 The path has two edge colors, so this state is available in $`\mathcal P_2`$. In $`\mathcal C_0`$, sample an even-parity string of local $`X`$ eigenvalues and initialize the corresponding product state; the same state is available at depth zero.
@@ -187,7 +187,7 @@ S_{\min}^{\mathrm{prod}}(N,D)
 =\Theta_{d,c,\kappa}\!\left[
 \frac{N}{\ell_D^d}\log(\ell_D+1)\right]
 \quad(D\ge2),
-\tag{B11}
+\qquad\text{(B11)}
 ```
 
 ```math
@@ -195,7 +195,7 @@ S_{\min}^{\mathrm{sh}}(N,D)
 =\Theta_{d,c,\kappa}\!\left[
 \frac{N}{\ell_D^d}+\log N\right]
 \quad(D\ge0).
-\tag{B12}
+\qquad\text{(B12)}
 ```
 
 The constants are uniform in $`N`$ and $`D`$. The exact finite lower bounds (B5) and (B8), and the [construction consequences](#construction-inputs-and-finite-depth-feasibility), apply before this asymptotic threshold as well.
@@ -246,7 +246,7 @@ The all-pair promise can be weakened in a quantitative finite-size way. Suppose 
 
 ```math
 f_{ij}(\rho)\ge c\quad\text{whenever }\mathrm{dist}(i,j)\ge r_f,
-\tag{B13}
+\qquad\text{(B13)}
 ```
 
 where the positive integer $`r_f`$ is fixed independently of $`N`$ and depth.
@@ -262,7 +262,7 @@ For an orbit bound inside a side-$`b`$ box, retain the subgrid of spacing $`r_f`
 
 ```math
 q_{r_f}(b)=\left\lfloor\log\big(\lceil b/r_f\rceil^d\big)\right\rfloor.
-\tag{B14}
+\qquad\text{(B14)}
 ```
 
 Every distinct chosen pair is separated by at least $`r_f`$. Global and within-box principal Gram bounds remain valid. The preceding proofs are otherwise unchanged.

@@ -313,7 +313,7 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** What replaces exact spatial independence when local dynamics has exponentially small tails?
 
-**Understanding target:** Understand the shell cut around one box under bounded finite-range generators. Each local summand is itself a valid Lindblad generator, so removing boundary terms preserves channel evolution. The smaller-support Lieb–Robinson estimate controls full trace-distance factorization between that box and the entire distant union, without a prefactor proportional to the union's size.
+**Understanding target:** Understand the shell cut around one box under bounded finite-range generators and product initial system–apparatus resources. Each local summand is itself a valid Lindblad generator, so removing boundary terms preserves channel evolution; the product input makes the cut output factorize. The smaller-support Lieb–Robinson estimate controls the full trace-distance error between that box and the entire distant union, without a prefactor proportional to the union's size.
 
 **Dependencies and story role:** Uses [M03](#m03-a-local-quantum-channel) and [M17](#m17-independent-output-regions-from-causal-cones). It replaces the exact circuit independence input; the propagation theorem is a research ingredient beyond the anchor.
 
@@ -325,7 +325,7 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** How can an approximate factorization error be converted to an entropy error without paying for an entire physical block?
 
-**Understanding target:** Represent a box's orbit Gram matrix using a measure-and-prepare channel whose auxiliary register has dimension equal to the selected site count $`m`$, rather than $`2^m`$. Chain conditional entropies across boxes and apply continuity with an $`O(\epsilon\log m)`$ local cost. The dimension of the distant conditioning register does not enter that cost.
+**Understanding target:** Represent a box's orbit Gram matrix using a measure-and-prepare channel whose auxiliary register has dimension equal to the selected site count $`m`$, rather than $`2^m`$. Chain conditional entropies across boxes and apply continuity with an $`O(\epsilon\log m)`$ dimension term plus a binary-entropy remainder depending only on $`\epsilon`$. The dimension of the distant conditioning register does not enter that cost.
 
 **Dependencies and story role:** Combines [M10](#m10-entropy-identities-that-assemble-many-parts), [M15](#m15-entropy-from-a-purified-unitary-orbit), [M18](#m18-a-logarithmic-cost-in-every-independent-region), and [M25](#m25-from-exact-cones-to-a-continuous-time-shell-cut). This preserves the product-input logarithmic enhancement in continuous time.
 

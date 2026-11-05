@@ -24,7 +24,7 @@ The middle column describes what to extract for this project; it is not a list o
 |---|---|---|
 | [Sections 1.1.1–1.1.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.1.pdf) | Tensor products, adjoints, spectral decompositions, and matrix norms | Read density matrices and the trace norm; understand why $`AA^\dagger`$ and $`A^\dagger A`$ have the same nonzero eigenvalues. |
 | [Section 1.2.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.1.pdf) | Finite probability distributions and expectations | Distinguish independent local coins from one correlated classical seed. |
-| [Sections 2.1.2–2.1.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) | Density operators, reduced states, and purification | Define the retained output, discarded apparatus, and the auxiliary purifier used in entropy proofs. |
+| [Sections 2.1.1–2.1.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) | Registers, density operators, reduced states, and purification | Define the retained output, discarded apparatus, and the auxiliary purifier used in entropy proofs. |
 | [Sections 2.2.1–2.2.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) | Quantum channels and their representations | Model local gates, randomization, and discard. Section 2.2.2 includes complete positivity in Theorem 2.22 and the trace-preservation conditions in Theorem 2.26. |
 | [Sections 2.3.1–2.3.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) | Measurement probabilities and ensembles | Relate a joint spin measurement to a classical law without replacing the quantum state by that law. |
 | [Sections 3.2.1–3.2.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf) | Fidelity and its purification and channel properties | Use Definition 3.11, Theorem 3.22, Corollary 3.26, and Theorem 3.27 in the entropy arguments. |
