@@ -16,6 +16,18 @@
 - [Related work](references/related_work.md): inherited results and comparison scope.
 - [Bibliography](references/references.bib): structured source identities.
 - [Verification](verification/README.md): actual finite checks and limits.
+- [Learning guide](learning/README.md): routes from the selected textbook to the scientific account.
+- [Educational anchor and bridge](learning/anchor.md): John Watrous, The Theory of Quantum Information (2018); relevant sections, notation, and missing project-specific steps.
+- [30-milestone map](learning/milestones.md): shared understanding targets, dependencies, and source pointers in background/preliminaries and narrative/innovation phases.
+- [Worked block example](learning/worked_example.md): exact entropy accounting for local block masks and a reused shared seed.
+
+## Routes by reader intention
+
+For the scientific story, read the overview, interpretation, model, and science guide. For the exact theorem, read the model and circuit bounds before following their links to the orbit argument and matching constructions. The continuous-time page states its own generator and apparatus assumptions.
+
+For study, begin with the learning guide and Watrous bridge, use the worked example to connect states to preparation resources, and follow the milestone map into the canonical proofs. The map is intrinsic to the project and records no learner assessment or progress. Watrous is the single educational anchor; primary research sources remain necessary for attribution and imported theorem ingredients.
+
+For reproduction, follow verification/README.md. The finite matrix checks validate the stated examples; they do not prove asymptotic lower bounds or simulate the continuous-time theorem.
 
 ## Retrieval cautions
 

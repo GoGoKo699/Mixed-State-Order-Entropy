@@ -11,7 +11,7 @@ F(\alpha,\beta)=\|\sqrt\alpha\sqrt\beta\|_1.
 For the lattice application, write
 
 ```math
-C_{ij}=\operatorname{Tr}(\rho Z_iZ_j),\qquad
+C_{ij}=\mathrm{Tr}(\rho Z_iZ_j),\qquad
 f_{ij}=\|\sqrt\rho Z_iZ_j\sqrt\rho\|_1,
 \qquad w(c)=1-h_2((1+c)/2).
 ```
@@ -26,7 +26,7 @@ For arbitrary density matrices $`\alpha,\beta`$, the equal-prior Holevo informat
 \chi(\alpha,\beta)
 :=S((\alpha+\beta)/2)-\tfrac12S(\alpha)-\tfrac12S(\beta)
 \le h_2((1+F(\alpha,\beta))/2).
-\tag{E1}
+\qquad\text{(E1)}
 ```
 
 **Proof.** By Uhlmann's theorem choose purifications with nonnegative overlap $`F(\alpha,\beta)`$. Their equal mixture has eigenvalues $`(1\pm F)/2`$, with any zero eigenvalue omitted, and its Holevo information is the binary entropy on the right. Partial trace cannot increase the Holevo information. This proves (E1). This inequality is inherited; see Roga, Fannes and Zyczkowski, PRL **105**, 040505 (2010), [Eq. (26), primary PDF](https://arxiv.org/pdf/1004.4782).
@@ -36,7 +36,7 @@ Root fidelity is jointly concave:
 ```math
 F\left(\sum_a p_a\alpha_a,\sum_a p_a\beta_a\right)
 \ge\sum_a p_aF(\alpha_a,\beta_a).
-\tag{E2}
+\qquad\text{(E2)}
 ```
 
 For completeness, choose pairwise optimal purifications and append an orthogonal flag $`a`$. The two flagged superpositions have overlap equal to the right side and purify the two mixtures. Uhlmann's variational characterization proves (E2).
@@ -48,7 +48,7 @@ Let $`\{\sigma_a:a\in\{0,1\}^q\}`$ be an equally weighted ensemble, and let $`0\
 ```math
 F(\sigma_a,\sigma_{a\oplus e_j})\ge c_j
 \quad\text{for every hypercube edge in direction }j.
-\tag{E3}
+\qquad\text{(E3)}
 ```
 
 Then
@@ -56,7 +56,7 @@ Then
 ```math
 \chi(\{2^{-q},\sigma_a\})
 \le\sum_{j=1}^q h_2((1+c_j)/2).
-\tag{E4}
+\qquad\text{(E4)}
 ```
 
 **Proof.** Reveal the label bits in order. At a fixed prefix and the next bit $`j`$, pair the left and right suffixes identically. Each paired state is an edge in direction $`j`$, so joint concavity gives fidelity at least $`c_j`$ between the two child-average states. Their equal-prior Holevo information is at most the corresponding term of (E4). The exact decomposition
@@ -76,7 +76,7 @@ Let $`\rho`$ be any finite-dimensional state and let $`U_a`$, indexed by $`a\in\
 
 ```math
 \sigma_a=U_a\rho U_a^\dagger,
-\qquad G_{ab}=\operatorname{Tr}(\rho U_a^\dagger U_b).
+\qquad G_{ab}=\mathrm{Tr}(\rho U_a^\dagger U_b).
 ```
 
 If the ensemble satisfies (E3), then
@@ -84,7 +84,7 @@ If the ensemble satisfies (E3), then
 ```math
 2S(\rho)\ge S(G/2^q)
 -\sum_{j=1}^q h_2((1+c_j)/2).
-\tag{E5}
+\qquad\text{(E5)}
 ```
 
 **Proof.** Choose any purification $`|\psi\rangle_{SE}`$ of $`\rho`$, and set $`|\psi_a\rangle=(U_a\otimes I_E)|\psi\rangle`$. The nonzero spectra of the uniform mixture
@@ -116,14 +116,14 @@ Choose $`M=2^q\le N`$ sites, and suppose their ordinary principal Gram matrix ob
 ```math
 2S(\rho)\ge S(C_A/M)-q\,h_2((1+c)/2)
 \ge q w(c)-\log\kappa_A.
-\tag{E6}
+\qquad\text{(E6)}
 ```
 
 In particular, the ordinary-Gram and pair-fidelity promises in the [model](model.md) imply
 
 ```math
 S(\rho)\ge\tfrac12[\lfloor\log N\rfloor w(c)-\log\kappa]_+.
-\tag{E7}
+\qquad\text{(E7)}
 ```
 
 **Proof.** Label the selected sites by $`q`$ bits and choose $`U_a=Z_a`$. Unitary invariance of fidelity gives
@@ -142,13 +142,13 @@ For commuting Hermitian involutions $`V_1,\ldots,V_k`$, let $`P`$ be their joint
 
 ```math
 S(\rho)\ge H(P)-\sum_{j=1}^kh_2((1+g_j)/2).
-\tag{E8}
+\qquad\text{(E8)}
 ```
 
 **Proof.** Apply $`\mathcal D_j(\sigma)=(\sigma+V_j\sigma V_j)/2`$ successively. Each entropy increase is the equal-prior Holevo information of two unitarily related states. Earlier twirls commute with conjugation by $`V_j`$, so fidelity data processing gives
 
 ```math
-F(\mathcal D_{<j}\rho,V_j\mathcal D_{<j}\rho V_j)\ge g_j.
+F(\mathcal D_{\lt j}\rho,V_j\mathcal D_{\lt j}\rho V_j)\ge g_j.
 ```
 
 The function $`h_2((1+g)/2)`$ decreases on $`[0,1]`$; Proposition E1 bounds the $`j`$-th increase by the corresponding term of (E8). The final state is block diagonal in the joint eigenspaces of the $`V_j`$. Its entropy is $`H(P)`$ plus a nonnegative average within-block entropy. Telescoping proves the claim. Linear dependencies among the involutions cause no problem because $`P`$ is the actual joint outcome law.
@@ -159,10 +159,10 @@ Suppose $`f_{ij}=1`$ for every distinct pair and $`C\preceq\kappa I`$. Then
 
 ```math
 S(\rho)\ge[\log N-\log\kappa]_+.
-\tag{E9}
+\qquad\text{(E9)}
 ```
 
-**Proof.** Unit root fidelity means equality of the two states, so $`\rho`$ commutes with every $`Z_iZ_j`$. Their common eigenspaces are the parity sectors $`\operatorname{span}\{|s\rangle,|-s\rangle\}`$, where $`s\in\{\pm1\}^N`$ and one representative is chosen from each pair $`s,-s`$. Write their weights as $`p_s`$. Block diagonality gives $`S(\rho)\ge H(p)`$. On a parity sector, $`Z_iZ_j`$ has the scalar value $`s_is_j`$, hence
+**Proof.** Unit root fidelity means equality of the two states, so $`\rho`$ commutes with every $`Z_iZ_j`$. Their common eigenspaces are the parity sectors $`\mathrm{span}\{|s\rangle,|-s\rangle\}`$, where $`s\in\{\pm1\}^N`$ and one representative is chosen from each pair $`s,-s`$. Write their weights as $`p_s`$. Block diagonality gives $`S(\rho)\ge H(p)`$. On a parity sector, $`Z_iZ_j`$ has the scalar value $`s_is_j`$, hence
 
 ```math
 C=\sum_s p_s\,s s^{\mathsf T}.

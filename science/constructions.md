@@ -19,8 +19,8 @@ Fidelity is the **root** convention. The states constructed below obey
 ```math
 Q\rho=\rho,
 \qquad F_{ij}(\rho)=1\quad(i\ne j),
-\qquad C_{ij}:=\operatorname{Tr}(\rho Z_iZ_j)=\delta_{ij}.
-\tag{1}
+\qquad C_{ij}:=\mathrm{Tr}(\rho Z_iZ_j)=\delta_{ij}.
+\qquad\text{(1)}
 ```
 
 Their entropy is unconditional: all preparation records and ancillary registers are discarded. There is no postselection. All logarithms and entropies are in bits.
@@ -31,12 +31,14 @@ The preparation consists of three operations:
 
 1. Prepare a GHZ+ state inside each block.
 2. Apply random on-site $`X`$ masks, with the correlation pattern specified below.
-3. Apply independent boundary channels
-   ```math
-   \mathcal D_e(\sigma)=\tfrac12\bigl(\sigma+Z_{u_e}Z_{v_e}\sigma Z_{u_e}Z_{v_e}\bigr)
-   \tag{2}
-   ```
-   on the edges of $`\mathsf T`$.
+3. Apply independent boundary channels on the edges of $`\mathsf T`$.
+
+Each boundary channel is
+
+```math
+\mathcal D_e(\sigma)=\tfrac12\bigl(\sigma+Z_{u_e}Z_{v_e}\sigma Z_{u_e}Z_{v_e}\bigr)
+\qquad\text{(2)}
+```
 
 The mask channel and the boundary channels commute as superoperators: conjugation by any $`X`$ mask commutes with conjugation by any $`Z_iZ_j`$, even when the underlying Pauli operators anticommute. Thus their order can be reversed without changing the retained output. The displayed order is convenient for the proof.
 
@@ -49,7 +51,7 @@ Start the data in the product state $`|+\rangle^{\otimes N}`$. On a parent site 
 ```math
 V_{ab}=\exp\!\left(\frac{i\pi}{4}Z_aY_b\right)
 =\frac{I+iZ_aY_b}{\sqrt2}.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 It satisfies
@@ -60,7 +62,7 @@ It satisfies
 V_{ab}|0,+\rangle=|00\rangle,
 \qquad
 V_{ab}|1,+\rangle=|11\rangle.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 The commutator vanishes because $`Z_aY_b`$ anticommutes with each of $`X_a`$ and $`X_b`$, and therefore commutes with their product. The two copying identities follow by applying $`\exp(\pm i\pi Y/4)`$ to $`|+\rangle`$. Consequently $`V_{ab}`$ extends an existing GHZ cat to the new child while preserving the global $`X`$ charge.
@@ -78,7 +80,7 @@ Represent a binary pattern $`u_b\in\mathbb F_2^{m_b}`$ with $`u_{b,o_b}=0`$. For
 ```math
 |u_b;\epsilon_b\rangle
 =\frac{|u_b\rangle+(-1)^{\epsilon_b}|u_b+\mathbf1_b\rangle}{\sqrt2}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 For $`m_b=1`$, the only canonical $`u_b`$ is zero and these are $`|+\rangle`$, $`|-\rangle`$. For every block, the states (5), indexed by its $`2^{m_b-1}`$ canonical patterns and two phase bits, form an orthonormal basis. They obey
@@ -86,7 +88,7 @@ For $`m_b=1`$, the only canonical $`u_b`$ is zero and these are $`|+\rangle`$, $
 ```math
 Q_b|u_b;\epsilon_b\rangle=(-1)^{\epsilon_b}|u_b;\epsilon_b\rangle,
 \quad Q_b=\prod_{i\in B_b}X_i,
-\tag{6}
+\qquad\text{(6)}
 ```
 
 and
@@ -94,7 +96,7 @@ and
 ```math
 Z_i|u_b;\epsilon_b\rangle
 =(-1)^{u_{b,i}}|u_b;\epsilon_b+1\rangle.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 All additions of binary labels are modulo two.
@@ -105,21 +107,21 @@ Let the raw mask be $`x=A y\in\mathbb F_2^N`$, where $`y\in\mathbb F_2^r`$ is un
 
 ```math
 X(x)=\prod_i X_i^{x_i}.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 Define the blockwise canonicalization map
 
 ```math
 (Tx)_{b,i}=x_i+x_{o_b},\qquad (Tx)_{b,o_b}=0.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 The phase incurred when a whole block is complemented is irrelevant to its density matrix. Acting on the initial GHZ+ product, (8) therefore produces the cat product labeled by $`u=TAy`$. Let
 
 ```math
-\mathcal U=\operatorname{im}(TA),\qquad q=\operatorname{rank}_{\mathbb F_2}(TA).
-\tag{10}
+\mathcal U=\mathrm{im}(TA),\qquad q=\mathrm{rank}_{\mathbb F_2}(TA).
+\qquad\text{(10)}
 ```
 
 The uniform seed gives the uniform law on $`\mathcal U`$, because all fibers of a linear map have the same size. Thus $`q`$, rather than the number of supplied seed bits, is the exact entropy contributed by distinguishable mask patterns. This distinction matters when some seed directions complement entire blocks and hence do not change the cat projectors.
@@ -131,7 +133,7 @@ For a boundary edge, (7) shows that $`Z_{u_e}Z_{v_e}`$ flips the phase bits at i
 ```math
 \epsilon=\partial s,
 \qquad s\in\mathbb F_2^{K-1},
-\tag{11}
+\qquad\text{(11)}
 ```
 
 where $`\partial`$ is the incidence matrix of the block tree over $`\mathbb F_2`$. Its image is
@@ -140,7 +142,7 @@ where $`\partial`$ is the incidence matrix of the block tree over $`\mathbb F_2`
 \mathcal E_K=\left\{\epsilon\in\mathbb F_2^K:
 \sum_b\epsilon_b=0\right\},
 \qquad \dim\mathcal E_K=K-1.
-\tag{12}
+\qquad\text{(12)}
 ```
 
 For completeness, every incidence column has even parity, so the image lies in $`\mathcal E_K`$. If a sum of tree-edge columns vanishes, a leaf forces the coefficient of its incident edge to vanish. Removing leaves inductively shows the columns are independent. There are $`K-1`$ of them, proving (12). Thus fair independent edge coins produce the uniform law on $`\mathcal E_K`$. A connected graph with extra edges gives the same output law but has redundant coins; a tree realizes the rank with exactly $`K-1`$ coins.
@@ -155,15 +157,15 @@ The final state is exactly
 \sum_{u\in\mathcal U}\sum_{\epsilon\in\mathcal E_K}
 \bigotimes_{b=1}^K
 |u_b;\epsilon_b\rangle\langle u_b;\epsilon_b|.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 Every summand is orthogonal to every other. Hence
 
 ```math
 \boxed{S(\rho_{A,\mathsf T})=q+K-1,\qquad
-\operatorname{rank}\rho_{A,\mathsf T}=2^{q+K-1}.}
-\tag{14}
+\mathrm{rank}\rho_{A,\mathsf T}=2^{q+K-1}.}
+\qquad\text{(14)}
 ```
 
 Its nonzero eigenvalues are all equal. Since $`q\le N-K`$, the rank never exceeds the dimension $`2^{N-1}`$ of the global $`Q=+1`$ sector. The formula includes $`K=1`$, for which there is no boundary channel and $`\mathcal E_1=\{0\}`$.
@@ -175,23 +177,23 @@ Equation (6) and even parity of $`\epsilon`$ prove $`Q\rho=\rho`$. If $`i,j`$ li
 ```math
 Z_iZ_j\rho Z_iZ_j=\rho,
 \qquad F_{ij}(\rho)=1.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 For a single site, $`Z_i\rho Z_i`$ lies in the opposite global charge sector, so
 
 ```math
 F(\rho,Z_i\rho Z_i)=0.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 Every cat has zero one-point $`Z_i`$. Correlations between different blocks therefore vanish even when the mask seeds or phase bits are correlated. Within one block,
 
 ```math
-\operatorname{Tr}(\rho Z_iZ_j)
+\mathrm{Tr}(\rho Z_iZ_j)
 =\mathbb E_y(-1)^{(a_i+a_j)\cdot y}
 =\begin{cases}1,&a_i=a_j,\\0,&a_i\ne a_j.\end{cases}
-\tag{17}
+\qquad\text{(17)}
 ```
 
 Consequently **distinct row labels within each block are sufficient for $`C=I_N`$**. Labels in different blocks may be reused. Strong symmetry also forces every one-point expectation of an operator odd under $`Q`$ to vanish. Suppressing correlations between general local charged operators requires the additional construction in Section 7; it must not be inferred merely from $`C=I_N`$.
@@ -206,23 +208,23 @@ For block $`b`$, let
 
 ```math
 r_b=\lceil\log_2 m_b\rceil,
-\tag{18}
+\qquad\text{(18)}
 ```
 
 with $`r_b=0`$ when $`m_b=1`$. Assign its sites the binary labels $`0,1,\ldots,m_b-1`$ in $`\mathbb F_2^{r_b}`$, with label zero at the anchor. Generate a uniform independent seed $`y_b\in\mathbb F_2^{r_b}`$. Use
 
 ```math
 x_i=a_i\cdot y_b\quad(i\in B_b).
-\tag{19}
+\qquad\text{(19)}
 ```
 
-Distinct labels give (17). The seed-to-canonical-pattern map has rank $`r_b`$: the labels include zero and all binary basis vectors $`1,2,4,\ldots,2^{r_b-1}`$, because $`2^{r_b-1}<m_b`$ when $`m_b\ge2`$. The seeds of different blocks are independent, so
+Distinct labels give (17). The seed-to-canonical-pattern map has rank $`r_b`$: the labels include zero and all binary basis vectors $`1,2,4,\ldots,2^{r_b-1}`$, because $`2^{r_b-1}\lt m_b`$ when $`m_b\ge2`$. The seeds of different blocks are independent, so
 
 ```math
 q=\sum_b r_b,
 \qquad
 \boxed{S_{\mathrm{strict}}=K-1+\sum_b\lceil\log_2m_b\rceil.}
-\tag{20}
+\qquad\text{(20)}
 ```
 
 This is an exact equality for every block size, including singleton blocks. The construction uses $`\sum_b r_b`$ independent mask coins and $`K-1`$ independent boundary coins, all generated during the preparation from local product apparatus.
@@ -231,9 +233,9 @@ This is an exact equality for every block size, including singleton blocks. The 
 
 The following explicit schedule prevents a hidden $`r_b h_b`$ depth cost or an unbounded on-site register.
 
-Fix the rooted block tree and each node's depth $`d_i`$. Give every site two ancillary classical-bit registers, `current` and `next`, initially zero. The randomness source at the root generates bit $`y_{b,t}`$ in round $`t`$ for $`0\le t<r_b`$. A local preparation of $`I/2`$ produces this fair bit; equivalently, prepare $`|+\rangle`$ and locally dephase it in $`Z`$. No nonlocal state is supplied.
+Fix the rooted block tree and each node's depth $`d_i`$. Give every site two ancillary classical-bit registers, `current` and `next`, initially zero. The randomness source at the root generates bit $`y_{b,t}`$ in round $`t`$ for $`0\le t\lt r_b`$. A local preparation of $`I/2`$ produces this fair bit; equivalently, prepare $`|+\rangle`$ and locally dephase it in $`Z`$. No nonlocal state is supplied.
 
-In round $`t=0,\ldots,h_b+r_b-1`$, the active current bit at site $`i`$ is $`y_{b,j}`$, where $`j=t-d_i`$ and $`0\le j<r_b`$. An inactive current register is zero. Each round consists of:
+In round $`t=0,\ldots,h_b+r_b-1`$, the active current bit at site $`i`$ is $`y_{b,j}`$, where $`j=t-d_i`$ and $`0\le j\lt r_b`$. An inactive current register is zero. Each round consists of:
 
 1. At an active root, prepare the next independent source bit.
 2. At every active site, apply a controlled $`X_i`$ from `current` to the retained qubit if the hardwired coefficient $`a_{i,j}`$ is one.
@@ -246,7 +248,7 @@ If the tree has maximum degree $`\Delta`$, a greedy edge coloring uses at most $
 
 ```math
 D_{\mathrm{mask},b}\le (2\Delta+6)(h_b+r_b+1).
-\tag{21}
+\qquad\text{(21)}
 ```
 
 Constants can be reduced; their optimization is irrelevant to the frontier. The active workspace is two bit registers per site, independent of $`r_b,m_b,N`$. The schedule has exactly $`(m_b-1)r_b`$ bit transmissions, at most $`m_b r_b`$ data-controlled $`X`$ gates, and $`O(m_b(r_b+1))`$ local reset/swap/preparation operations. Idle zero-register actions are omitted. Thus the latency is $`O(h_b+r_b)`$ and the gate count is $`O(m_b(r_b+1))`$, rather than their product with the tree height.
@@ -267,7 +269,7 @@ The largest block contains all $`r`$ basis labels. The canonical mask map theref
 
 ```math
 \boxed{S_{\mathrm{shared}}=K-1+\lceil\log_2m_*\rceil.}
-\tag{22}
+\qquad\text{(22)}
 ```
 
 This sharper exact form implies the advertised $`O(K+\log N)`$ upper. It is also at least $`\log_2N`$, since $`N\le K m_*`$ and $`\log_2K\le K-1`$. For balanced blocks it is $`\Theta(K+\log N)`$. No contradiction with the static logarithmic lower bound occurs when the shared seed is shorter than $`\log_2N`$: the $`K-1`$ boundary-phase bits supply the rest of the mixedness.
@@ -275,9 +277,9 @@ This sharper exact form implies the advertised $`O(K+\log N)`$ upper. It is also
 One can instead assign all $`N`$ sites distinct global binary labels with $`r=\lceil\log_2N\rceil`$. That familiar global Hadamard construction gives
 
 ```math
-S=K-1+\operatorname{rank}\{a_i+a_{o_b}:i\in B_b,\ b\in[K]\}
+S=K-1+\mathrm{rank}\{a_i+a_{o_b}:i\in B_b,\ b\in[K]\}
 \le K-1+\lceil\log_2N\rceil.
-\tag{23}
+\qquad\text{(23)}
 ```
 
 Equality to the supplied seed length is not automatic. For example, with eight sites and two consecutive four-site blocks, global binary labels $`0,\ldots,7`$ have only two independent within-block differences. The final entropy is three bits, although the supplied global seed has three bits and there is an additional boundary coin.
@@ -298,7 +300,7 @@ For a cubic $`d`$-dimensional box of side $`L`$, $`N=L^d`$, choose a partition i
 K=\Theta_d(N/\ell^d),
 \qquad m_b=\Theta_d(\ell^d),
 \qquad h_b=O_d(\ell).
-\tag{24}
+\qquad\text{(24)}
 ```
 
 For $`\ell`$ near $`L`$, take a single block. A bounded-degree tree of block adjacencies and a constant edge-color schedule implement all boundary channels (2) in $`O_d(1)`$ layers. The boundary channels have Kraus operators $`I/\sqrt2`$ and $`Z_{u_e}Z_{v_e}/\sqrt2`$, each commuting with the global $`X`$ charge. Their exact local CPTP realization may use a local meter that is discarded.
@@ -309,7 +311,7 @@ For an explicit finite bound, suppose every block has side lengths at most the i
 D_{\mathrm{prep}}
 \le (12d^2+11d)(b-1)+8d+5
 \le A_db,\qquad A_d=64(d+1)^2.
-\tag{24a}
+\qquad\text{(24a)}
 ```
 
 The shared-seed mask step is only one layer; the displayed common bound deliberately also covers the strict stream. The constants are implementation bounds, not claims of minimum depth.
@@ -337,14 +339,14 @@ S_{\mathrm{strict}}
 \qquad
 S_{\mathrm{shared}}
 =O_d\!\left(\frac{N}{\ell^d}+\log N\right),
-\tag{25}
+\qquad\text{(25)}
 ```
 
 with exact maximal fidelity order and $`C=I`$. Choosing $`\ell`$ a sufficiently small constant multiple of a prescribed depth budget $`D`$ gives the matching upper laws for all sufficiently large constant $`D`$, up to the fixed-dimensional implementation constants. At a constant depth, singleton or bounded-size blocks give entropy $`\Theta(N)`$. At and beyond diameter depth, a single block gives entropy $`\lceil\log_2N\rceil`$, so the scale saturates at $`\Theta(\log N)`$.
 
 The factor $`N/D^d`$ is capped at diameter depth; it does not continue below one. A notation such as $`D+1`$ does not assert zero-depth feasibility in the strict product model. For $`N\ge3`$, its ordered class is empty at depth zero or one under the stated two-site-gate convention; the shared-classical class has a depth-zero baseline. These exceptions and a depth-two strict baseline are given in [Circuit bounds](circuit_bounds.md#construction-inputs-and-finite-depth-feasibility). Equations (20)–(24a), with the explicit depth schedule, give the finite-size upper statement.
 
-The lower bounds are proved in [Circuit bounds](circuit_bounds.md). Since these states have $`F_{ij}=1`$, they serve as upper examples for every fixed target $`0<c\le1`$. Their entropy scaling does not establish an optimal coefficient as $`c\to0`$.
+The lower bounds are proved in [Circuit bounds](circuit_bounds.md). Since these states have $`F_{ij}=1`$, they serve as upper examples for every fixed target $`0\lt c\le1`$. Their entropy scaling does not establish an optimal coefficient as $`c\to0`$.
 
 ## 7. Masks that suppress general local charged correlations
 
@@ -370,7 +372,7 @@ Conjugating by a mask gives
 
 ```math
 X(Ay)P X(Ay)=(-1)^{(\sum_{i\in D(P)}a_i)\cdot y}P.
-\tag{26}
+\qquad\text{(26)}
 ```
 
 The string is odd under $`Q`$ exactly when $`|D(P)|`$ is odd. For two strings on disjoint physical supports, their product has the union of their $`Y/Z`$ supports, without cancellation. This disjoint-support condition is essential.
@@ -381,14 +383,14 @@ Fix a family of at most $`N`$ lattice balls, one per possible center, each conta
 
 ```math
 \sum_{i\in A\cup B}a_i\ne0.
-\tag{27}
+\qquad\text{(27)}
 ```
 
 The containing balls may overlap; only the actual supports must be disjoint. There are at most $`N^2 2^{2b}`$ constraints. Each involves a nonempty set of independently sampled labels, so its zero-XOR probability is exactly $`2^{-r}`$. The union bound shows a valid fixed label table exists when, for example,
 
 ```math
 r\ge \left\lceil 1+2\log_2N+2b\right\rceil.
-\tag{28}
+\qquad\text{(28)}
 ```
 
 At that choice the failure probability is at most $`1/2`$. Once a valid table has been found, only the uniform seed $`y`$ is randomized during use; the table is fixed control information.
@@ -399,7 +401,7 @@ Taking $`b=\lfloor\log_2N\rfloor`$ keeps $`r=O(\log N)`$, so
 
 ```math
 S\le K-1+r=O(K+\log N).
-\tag{29}
+\qquad\text{(29)}
 ```
 
 On a fixed-dimensional lattice, balls of radius proportional to $`(\log N)^{1/d}`$ satisfy this size condition. Their radius diverges, so every fixed-radius local charged operator is eventually covered. The entropy scaling of the shared construction is therefore retained while removing hidden ordinary charged order at every fixed local scale.
@@ -414,14 +416,14 @@ For a block $`B_b`$, consider the intersections with all lattice balls of radius
 
 ```math
 \sum_{i\in D}a_i^{(b)}\ne0.
-\tag{30}
+\qquad\text{(30)}
 ```
 
 No parity condition is imposed in (30). There are at most $`M_b^2 2^{2b_*}`$ constraints. Independent random labels in $`\mathbb F_2^{r_b}`$ satisfy them with positive probability if
 
 ```math
 r_b\ge\left\lceil1+2\log_2M_b+2b_*\right\rceil.
-\tag{31}
+\qquad\text{(31)}
 ```
 
 For bounded-aspect-ratio blocks and $`R`$ no larger than a fixed multiple of their side, $`M_b=O_d(m_b)`$. Choose $`b_*=O(\log m_b)`$, uniformly using the minimum block size for a balanced partition. Then $`r_b=O_d(\log m_b)`$. The stream protocol of Section 4 distributes these seeds in $`O_d(\ell)`$ depth with constant active workspace, and (14) gives
@@ -429,7 +431,7 @@ For bounded-aspect-ratio blocks and $`R`$ no larger than a fixed multiple of the
 ```math
 S\le K-1+\sum_b r_b
 =O_d(K\log(\ell+1)).
-\tag{32}
+\qquad\text{(32)}
 ```
 
 To prove the charged-correlation claim, take disjoint charged Pauli strings $`P_A,P_B`$ in two radius-$`R`$ balls. Their product has a nonempty $`Y/Z`$ support. In some block, its intersection $`D_b`$ is nonempty and lies in the union of the two ball intersections. The independent seed in that block kills the product by (26) and (30). This argument allows both operators to cross block boundaries and does not assume that their containing balls are disjoint. Pauli expansion again gives arbitrary charged local operators.
