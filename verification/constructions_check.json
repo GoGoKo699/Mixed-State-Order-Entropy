@@ -1,0 +1,3132 @@
+{
+  "schema": "mixed-state-order-entropy-construction-checks-v1",
+  "generated_at_utc": "2026-11-05T07:07:16.459748+00:00",
+  "scope": "finite final masked states; analytic proofs are in science/constructions.md",
+  "fidelity_convention": "root fidelity; for Hermitian G, ||sqrt(rho) G sqrt(rho)||_1",
+  "entropy_units": "bits",
+  "qubit_index_convention": "site i is computational-basis bit i, least significant first",
+  "local_charged_check_convention": "all Pauli strings odd under product X, supported within an index-chain interval of the recorded length; all pairs with disjoint actual supports",
+  "numerical_tolerance": 2e-10,
+  "square_root_null_space_cutoff": 2e-10,
+  "python_version": "3.12.14",
+  "numpy_version": "2.3.5",
+  "script_sha256": "8c8157616e008404f480c95d39f22c78be394a957db7f309fb242043cc0fb7ed",
+  "fusion_checks": {
+    "unitarity_residual": 4.463374267214424e-16,
+    "XX_commutator_residual": 0.0,
+    "copy_zero_residual": 2.220446049250313e-16,
+    "copy_one_residual": 2.220446049250313e-16
+  },
+  "shared_global_and_reused_label_density_residual": 0.0,
+  "unrepaired_Hadamard_higher_local_charged_correlation_detected": 0.9999999999999992,
+  "cases": [
+    {
+      "name": "strict_unequal_blocks_7",
+      "model": "strict_product",
+      "n": 7,
+      "block_sites": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            2
+          ],
+          "row_labels": [
+            0,
+            1,
+            2
+          ],
+          "seed_bits": 2
+        },
+        {
+          "sites": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 4,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 32,
+        "predicted_entropy_bits": 5.0,
+        "raw_seed_bits": 4,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 32,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": [
+          {
+            "rounds": 4,
+            "height": 2,
+            "source_bits": 2,
+            "transmissions": 4,
+            "controlled_x_gates": 2,
+            "resets": 6,
+            "buffer_swaps": 4,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 5,
+            "height": 3,
+            "source_bits": 2,
+            "transmissions": 6,
+            "controlled_x_gates": 4,
+            "resets": 8,
+            "buffer_swaps": 6,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          }
+        ]
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 1.5700924586837752e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 32,
+        "entropy_bits": 4.9999999999999964,
+        "purity": 0.031249999999999944,
+        "nonzero_eigenvalue_min": 0.031249999999999972,
+        "nonzero_eigenvalue_max": 0.031249999999999972,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 4.567384584312367e-18,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 128,
+          "disjoint_pairs_checked": 3144,
+          "distinct_products_evaluated": 2752,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.9999999999999991,
+          "largest_correlation_witness": {
+            "operator_a": "IIIZIII",
+            "operator_b": "IIIIZZZ",
+            "correlation_real": 0.9999999999999991,
+            "correlation_imag": 0.0
+          }
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "shared_reused_labels_7",
+      "model": "preshared_classical",
+      "n": 7,
+      "block_sites": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5,
+          6
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          2,
+          3
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            0,
+            1,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 2,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 8,
+        "predicted_entropy_bits": 3.0,
+        "raw_seed_bits": 2,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 8,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": []
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 3.1401849173675503e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 8,
+        "entropy_bits": 2.9999999999999987,
+        "purity": 0.12499999999999978,
+        "nonzero_eigenvalue_min": 0.12499999999999989,
+        "nonzero_eigenvalue_max": 0.12499999999999989,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 4.567384584312367e-18,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 128,
+          "disjoint_pairs_checked": 3144,
+          "distinct_products_evaluated": 2752,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.9999999999999991,
+          "largest_correlation_witness": {
+            "operator_a": "IIIZIII",
+            "operator_b": "IIIIZZZ",
+            "correlation_real": 0.9999999999999991,
+            "correlation_imag": 0.0
+          }
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "strict_branched_blocks_8",
+      "model": "strict_product",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        },
+        {
+          "sites": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 4,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 32,
+        "predicted_entropy_bits": 5.0,
+        "raw_seed_bits": 4,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 32,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": [
+          {
+            "rounds": 4,
+            "height": 2,
+            "source_bits": 2,
+            "transmissions": 6,
+            "controlled_x_gates": 4,
+            "resets": 8,
+            "buffer_swaps": 6,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 4,
+            "height": 2,
+            "source_bits": 2,
+            "transmissions": 6,
+            "controlled_x_gates": 4,
+            "resets": 8,
+            "buffer_swaps": 6,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          }
+        ]
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 1.5700924586837752e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 32,
+        "entropy_bits": 4.9999999999999964,
+        "purity": 0.031249999999999944,
+        "nonzero_eigenvalue_min": 0.031249999999999972,
+        "nonzero_eigenvalue_max": 0.031249999999999972,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 0.0,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 152,
+          "disjoint_pairs_checked": 5280,
+          "distinct_products_evaluated": 4784,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.0,
+          "largest_correlation_witness": null
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "shared_global_labels_8",
+      "model": "preshared_classical",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "seed_bits": 3
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 2,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 8,
+        "predicted_entropy_bits": 3.0,
+        "raw_seed_bits": 3,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 16,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": []
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 3.1401849173675503e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 8,
+        "entropy_bits": 2.9999999999999987,
+        "purity": 0.12499999999999978,
+        "nonzero_eigenvalue_min": 0.12499999999999989,
+        "nonzero_eigenvalue_max": 0.12499999999999989,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 0.0,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 152,
+          "disjoint_pairs_checked": 5280,
+          "distinct_products_evaluated": 4784,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.9999999999999991,
+          "largest_correlation_witness": {
+            "operator_a": "ZIIIIIII",
+            "operator_b": "IZZZIIII",
+            "correlation_real": 0.9999999999999991,
+            "correlation_imag": 0.0
+          }
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "shared_reused_labels_8",
+      "model": "preshared_classical",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "row_labels": [
+            0,
+            1,
+            0,
+            1,
+            2,
+            3,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 2,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 8,
+        "predicted_entropy_bits": 3.0,
+        "raw_seed_bits": 2,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 8,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": []
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 3.1401849173675503e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 8,
+        "entropy_bits": 2.9999999999999987,
+        "purity": 0.12499999999999978,
+        "nonzero_eigenvalue_min": 0.12499999999999989,
+        "nonzero_eigenvalue_max": 0.12499999999999989,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 0.0,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 152,
+          "disjoint_pairs_checked": 5280,
+          "distinct_products_evaluated": 4784,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.9999999999999991,
+          "largest_correlation_witness": {
+            "operator_a": "ZIIIIIII",
+            "operator_b": "IZZZIIII",
+            "correlation_real": 0.9999999999999991,
+            "correlation_imag": 0.0
+          }
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "strict_growing_support_masks_8",
+      "model": "strict_product",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "row_labels": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "seed_bits": 4
+        },
+        {
+          "sites": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "row_labels": [
+            1,
+            2,
+            4,
+            8
+          ],
+          "seed_bits": 4
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 6,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 128,
+        "predicted_entropy_bits": 7.0,
+        "raw_seed_bits": 8,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 512,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": [
+          {
+            "rounds": 6,
+            "height": 2,
+            "source_bits": 4,
+            "transmissions": 12,
+            "controlled_x_gates": 4,
+            "resets": 16,
+            "buffer_swaps": 12,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 6,
+            "height": 2,
+            "source_bits": 4,
+            "transmissions": 12,
+            "controlled_x_gates": 4,
+            "resets": 16,
+            "buffer_swaps": 12,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          }
+        ]
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 7.850462293418876e-17,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": {
+        "mode": "independent_full_rank_block_labels",
+        "distinct_local_charged_pair_YZ_constraints": 59,
+        "failed_constraints": 0
+      },
+      "observed": {
+        "trace_real": 0.9999999999999996,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 128,
+        "entropy_bits": 6.9999999999999964,
+        "purity": 0.007812499999999986,
+        "nonzero_eigenvalue_min": 0.007812499999999993,
+        "nonzero_eigenvalue_max": 0.007812499999999993,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            4.163336342344337e-17
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.163336342344337e-17,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 5.887846720064156e-17,
+        "max_off_diagonal_ordinary_ZZ": 4.163336342344337e-17,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            1.0,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            0.999999999999999,
+            1.0,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            1.0,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            1.0,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            1.0,
+            0.999999999999999,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            1.0,
+            0.999999999999999
+          ],
+          [
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            0.999999999999999,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.999999999999999,
+        "pair_root_fidelity_max": 0.999999999999999,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 0.0,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 152,
+          "disjoint_pairs_checked": 5280,
+          "distinct_products_evaluated": 4784,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.0,
+          "largest_correlation_witness": null
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "shared_growing_support_masks_8",
+      "model": "preshared_classical",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "row_labels": [
+            1,
+            2,
+            4,
+            8,
+            16,
+            32,
+            64,
+            127
+          ],
+          "seed_bits": 7
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 5,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 64,
+        "predicted_entropy_bits": 6.0,
+        "raw_seed_bits": 7,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 256,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": []
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 1.1102230246251565e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": {
+        "mode": "only_label_dependency_uses_all_eight_sites",
+        "distinct_local_charged_pair_YZ_constraints": 59,
+        "failed_constraints": 0
+      },
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 64,
+        "entropy_bits": 5.999999999999995,
+        "purity": 0.015624999999999972,
+        "nonzero_eigenvalue_min": 0.015624999999999986,
+        "nonzero_eigenvalue_max": 0.015624999999999986,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            4.163336342344337e-17
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.163336342344337e-17,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 5.887846720064156e-17,
+        "max_off_diagonal_ordinary_ZZ": 4.163336342344337e-17,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            1.0,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            0.9999999999999987,
+            1.0,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            1.0,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            1.0,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            1.0,
+            0.9999999999999987,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            1.0,
+            0.9999999999999987
+          ],
+          [
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            0.9999999999999987,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999987,
+        "pair_root_fidelity_max": 0.9999999999999987,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 0.0,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 152,
+          "disjoint_pairs_checked": 5280,
+          "distinct_products_evaluated": 4784,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.0,
+          "largest_correlation_witness": null
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "strict_single_block_6",
+      "model": "strict_product",
+      "n": 6,
+      "block_sites": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ]
+        ]
+      ],
+      "boundary_edges": [],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "seed_bits": 3
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 3,
+        "boundary_incidence_rank": 0,
+        "predicted_state_rank": 8,
+        "predicted_entropy_bits": 3.0,
+        "raw_seed_bits": 3,
+        "independent_boundary_coins": 0
+      },
+      "implementation": {
+        "trajectory_branches": 8,
+        "ghz_gate_to_cat_vector_residual": 3.1401849173675503e-16,
+        "strict_streams": [
+          {
+            "rounds": 8,
+            "height": 5,
+            "source_bits": 3,
+            "transmissions": 15,
+            "controlled_x_gates": 7,
+            "resets": 18,
+            "buffer_swaps": 15,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          }
+        ]
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 1.962615573354719e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999992,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 8,
+        "entropy_bits": 2.999999999999999,
+        "purity": 0.1249999999999998,
+        "nonzero_eigenvalue_min": 0.1249999999999999,
+        "nonzero_eigenvalue_max": 0.1249999999999999,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 4.567384584312367e-18,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 3 sites",
+          "charged_pauli_count": 104,
+          "disjoint_pairs_checked": 1584,
+          "distinct_products_evaluated": 1296,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.9999999999999992,
+          "largest_correlation_witness": {
+            "operator_a": "ZIIIII",
+            "operator_b": "IZZZII",
+            "correlation_real": 0.9999999999999992,
+            "correlation_imag": 0.0
+          }
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "singleton_blocks_4",
+      "model": "strict_product",
+      "n": 4,
+      "block_sites": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_tree_edges": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "boundary_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "mask_groups": [
+        {
+          "sites": [
+            0
+          ],
+          "row_labels": [
+            0
+          ],
+          "seed_bits": 0
+        },
+        {
+          "sites": [
+            1
+          ],
+          "row_labels": [
+            0
+          ],
+          "seed_bits": 0
+        },
+        {
+          "sites": [
+            2
+          ],
+          "row_labels": [
+            0
+          ],
+          "seed_bits": 0
+        },
+        {
+          "sites": [
+            3
+          ],
+          "row_labels": [
+            0
+          ],
+          "seed_bits": 0
+        }
+      ],
+      "negative_control": null,
+      "exact_prediction": {
+        "mask_image_rank": 0,
+        "boundary_incidence_rank": 3,
+        "predicted_state_rank": 8,
+        "predicted_entropy_bits": 3.0,
+        "raw_seed_bits": 0,
+        "independent_boundary_coins": 3
+      },
+      "implementation": {
+        "trajectory_branches": 8,
+        "ghz_gate_to_cat_vector_residual": 0.0,
+        "strict_streams": [
+          {
+            "rounds": 0,
+            "height": 0,
+            "source_bits": 0,
+            "transmissions": 0,
+            "controlled_x_gates": 0,
+            "resets": 0,
+            "buffer_swaps": 0,
+            "edge_colors": 0,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 0,
+            "height": 0,
+            "source_bits": 0,
+            "transmissions": 0,
+            "controlled_x_gates": 0,
+            "resets": 0,
+            "buffer_swaps": 0,
+            "edge_colors": 0,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 0,
+            "height": 0,
+            "source_bits": 0,
+            "transmissions": 0,
+            "controlled_x_gates": 0,
+            "resets": 0,
+            "buffer_swaps": 0,
+            "edge_colors": 0,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 0,
+            "height": 0,
+            "source_bits": 0,
+            "transmissions": 0,
+            "controlled_x_gates": 0,
+            "resets": 0,
+            "buffer_swaps": 0,
+            "edge_colors": 0,
+            "max_buffers_per_site": 2
+          }
+        ]
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 0.0,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 1.0,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 8,
+        "entropy_bits": 3.0,
+        "purity": 0.125,
+        "nonzero_eigenvalue_min": 0.125,
+        "nonzero_eigenvalue_max": 0.125,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999998,
+            0.9999999999999998,
+            0.9999999999999998
+          ],
+          [
+            0.9999999999999998,
+            1.0,
+            0.9999999999999998,
+            0.9999999999999998
+          ],
+          [
+            0.9999999999999998,
+            0.9999999999999998,
+            1.0,
+            0.9999999999999998
+          ],
+          [
+            0.9999999999999998,
+            0.9999999999999998,
+            0.9999999999999998,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999998,
+        "pair_root_fidelity_max": 0.9999999999999998,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 2.2371143170757382e-17,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 1 sites",
+          "charged_pauli_count": 8,
+          "disjoint_pairs_checked": 24,
+          "distinct_products_evaluated": 24,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.0,
+          "largest_correlation_witness": null
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "negative_control_no_masks_8",
+      "model": "negative_control",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [
+        [
+          1,
+          2
+        ]
+      ],
+      "mask_groups": [],
+      "negative_control": "ordinary_gram_fails",
+      "exact_prediction": {
+        "mask_image_rank": 0,
+        "boundary_incidence_rank": 1,
+        "predicted_state_rank": 2,
+        "predicted_entropy_bits": 1.0,
+        "raw_seed_bits": 0,
+        "independent_boundary_coins": 1
+      },
+      "implementation": {
+        "trajectory_branches": 2,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": []
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 6.280369834735101e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": 0.0,
+        "numerical_rank": 2,
+        "entropy_bits": 1.0000000000000004,
+        "purity": 0.4999999999999991,
+        "nonzero_eigenvalue_min": 0.49999999999999956,
+        "nonzero_eigenvalue_max": 0.49999999999999956,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.9999999999999991,
+            0.0,
+            0.0,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.0,
+            0.0
+          ],
+          [
+            0.9999999999999991,
+            1.0,
+            0.0,
+            0.0,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.9999999999999991,
+            0.0,
+            0.0,
+            0.9999999999999991,
+            0.9999999999999991
+          ],
+          [
+            0.0,
+            0.0,
+            0.9999999999999991,
+            1.0,
+            0.0,
+            0.0,
+            0.9999999999999991,
+            0.9999999999999991
+          ],
+          [
+            0.9999999999999991,
+            0.9999999999999991,
+            0.0,
+            0.0,
+            1.0,
+            0.9999999999999991,
+            0.0,
+            0.0
+          ],
+          [
+            0.9999999999999991,
+            0.9999999999999991,
+            0.0,
+            0.0,
+            0.9999999999999991,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.0,
+            0.0,
+            1.0,
+            0.9999999999999991
+          ],
+          [
+            0.0,
+            0.0,
+            0.9999999999999991,
+            0.9999999999999991,
+            0.0,
+            0.0,
+            0.9999999999999991,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 4.898979485566352,
+        "max_off_diagonal_ordinary_ZZ": 0.9999999999999991,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0,
+            0.9999999999999989
+          ],
+          [
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            0.9999999999999989,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 0.9999999999999989,
+        "pair_root_fidelity_max": 0.9999999999999989,
+        "max_pair_Z_conjugation_frobenius_residual": 0.0,
+        "single_Z_root_fidelity_max": 0.0,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 1 sites",
+          "charged_pauli_count": 16,
+          "disjoint_pairs_checked": 112,
+          "distinct_products_evaluated": 112,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.9999999999999991,
+          "largest_correlation_witness": {
+            "operator_a": "ZIIIIIII",
+            "operator_b": "IZIIIIII",
+            "correlation_real": 0.9999999999999991,
+            "correlation_imag": 0.0
+          }
+        }
+      },
+      "all_case_assertions_passed": true
+    },
+    {
+      "name": "negative_control_missing_boundary_8",
+      "model": "negative_control",
+      "n": 8,
+      "block_sites": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          6,
+          7
+        ]
+      ],
+      "block_tree_edges": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            2,
+            3
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ]
+      ],
+      "boundary_edges": [],
+      "mask_groups": [
+        {
+          "sites": [
+            0,
+            1,
+            4,
+            5
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        },
+        {
+          "sites": [
+            2,
+            3,
+            6,
+            7
+          ],
+          "row_labels": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "seed_bits": 2
+        }
+      ],
+      "negative_control": "cross_block_fidelity_fails",
+      "exact_prediction": {
+        "mask_image_rank": 4,
+        "boundary_incidence_rank": 0,
+        "predicted_state_rank": 16,
+        "predicted_entropy_bits": 4.0,
+        "raw_seed_bits": 4,
+        "independent_boundary_coins": 0
+      },
+      "implementation": {
+        "trajectory_branches": 16,
+        "ghz_gate_to_cat_vector_residual": 4.440892098500626e-16,
+        "strict_streams": [
+          {
+            "rounds": 4,
+            "height": 2,
+            "source_bits": 2,
+            "transmissions": 6,
+            "controlled_x_gates": 4,
+            "resets": 8,
+            "buffer_swaps": 6,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          },
+          {
+            "rounds": 4,
+            "height": 2,
+            "source_bits": 2,
+            "transmissions": 6,
+            "controlled_x_gates": 4,
+            "resets": 8,
+            "buffer_swaps": 6,
+            "edge_colors": 2,
+            "max_buffers_per_site": 2
+          }
+        ]
+      },
+      "representation_comparisons": {
+        "trajectory_to_cat_sector_frobenius_residual": 2.220446049250313e-16,
+        "trajectory_to_channel_composition_frobenius_residual": 0.0,
+        "mask_boundary_order_frobenius_residual": 0.0
+      },
+      "mask_constraints": null,
+      "observed": {
+        "trace_real": 0.9999999999999991,
+        "hermiticity_frobenius_residual": 0.0,
+        "minimum_eigenvalue": -2.6309986720686304e-17,
+        "numerical_rank": 16,
+        "entropy_bits": 3.9999999999999982,
+        "purity": 0.06249999999999989,
+        "nonzero_eigenvalue_min": 0.06249999999999994,
+        "nonzero_eigenvalue_max": 0.06249999999999999,
+        "strong_Q_plus_frobenius_residual": 0.0,
+        "ordinary_gram": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ordinary_gram_to_identity_frobenius_residual": 0.0,
+        "max_off_diagonal_ordinary_ZZ": 0.0,
+        "pair_root_fidelity_matrix": [
+          [
+            1.0,
+            0.9999999999999998,
+            9.95788570534836e-17,
+            1.0017912289584729e-16,
+            0.9999999999999999,
+            0.9999999999999998,
+            1.0037467463612574e-16,
+            1.0070560969823069e-16
+          ],
+          [
+            0.9999999999999998,
+            1.0,
+            9.640007248059703e-17,
+            9.600992893178116e-17,
+            0.9999999999999998,
+            0.9999999999999999,
+            1.0656578095631504e-16,
+            1.0611581027209744e-16
+          ],
+          [
+            9.95788570534836e-17,
+            9.640007248059703e-17,
+            1.0,
+            0.9999999999999998,
+            1.0959065849357662e-16,
+            1.146988586134737e-16,
+            0.9999999999999998,
+            0.9999999999999998
+          ],
+          [
+            1.0017912289584729e-16,
+            9.600992893178116e-17,
+            0.9999999999999998,
+            1.0,
+            1.0904276476160965e-16,
+            1.147299440193316e-16,
+            0.9999999999999998,
+            0.9999999999999998
+          ],
+          [
+            0.9999999999999999,
+            0.9999999999999998,
+            1.0959065849357662e-16,
+            1.0904276476160965e-16,
+            1.0,
+            0.9999999999999998,
+            1.0775258694434213e-16,
+            1.084154190474437e-16
+          ],
+          [
+            0.9999999999999998,
+            0.9999999999999999,
+            1.146988586134737e-16,
+            1.147299440193316e-16,
+            0.9999999999999998,
+            1.0,
+            1.0155345032452669e-16,
+            1.0213842845398561e-16
+          ],
+          [
+            1.0037467463612574e-16,
+            1.0656578095631504e-16,
+            0.9999999999999998,
+            0.9999999999999998,
+            1.0775258694434213e-16,
+            1.0155345032452669e-16,
+            1.0,
+            0.9999999999999998
+          ],
+          [
+            1.0070560969823069e-16,
+            1.0611581027209744e-16,
+            0.9999999999999998,
+            0.9999999999999998,
+            1.084154190474437e-16,
+            1.0213842845398561e-16,
+            0.9999999999999998,
+            1.0
+          ]
+        ],
+        "pair_root_fidelity_min": 9.600992893178116e-17,
+        "pair_root_fidelity_max": 0.9999999999999999,
+        "max_pair_Z_conjugation_frobenius_residual": 0.3535533905932737,
+        "single_Z_root_fidelity_max": 1.2263790241461166e-16,
+        "local_charged": {
+          "support_family": "subsets of index-chain intervals of at most 1 sites",
+          "charged_pauli_count": 16,
+          "disjoint_pairs_checked": 112,
+          "distinct_products_evaluated": 112,
+          "max_absolute_one_point": 0.0,
+          "max_absolute_two_point": 0.0,
+          "largest_correlation_witness": null
+        }
+      },
+      "all_case_assertions_passed": true
+    }
+  ],
+  "all_assertions_passed": true
+}

@@ -1,0 +1,30 @@
+# Mixed-State-Order-Entropy
+
+> Matching retained-entropy versus local-preparation bounds for global fidelity order under a uniformly bounded ordinary correlation Gram matrix.
+
+## Authoritative reading route
+
+- [Overview](README.md): main result, scope, reproduction, purpose/contact.
+- [Science guide](science/README.md): connected reading order.
+- [Model](science/model.md): root fidelity, strong charge support, fixed c and kappa, product versus shared-classical apparatus.
+- [Entropy bounds](science/entropy_bounds.md): inherited binary Holevo input, purified orbit argument, static logarithmic floor.
+- [Circuit bounds](science/circuit_bounds.md): exact finite packing inequalities, shared-seed causal-volume bound, matched capped laws.
+- [Constructions](science/constructions.md): exact spectrum, strong gates, streamed local seeds, economical shared masks, general charged-operator repair.
+- [Continuous time](science/continuous_time.md): local-generator model, shell cuts, fingerprint entropy continuity, matching Hamiltonian apparatus.
+- [Scope and robustness](science/scope_and_robustness.md): leakage bounds and counterexamples, Gram-norm necessity.
+- [Interpretation](science/interpretation.md): physical consequences and distinctions between order diagnostics.
+- [Related work](references/related_work.md): inherited results and comparison scope.
+- [Bibliography](references/references.bib): structured source identities.
+- [Verification](verification/README.md): actual finite checks and limits.
+
+## Retrieval cautions
+
+Fidelity is the root convention; all entropies are in bits. The output entropy is unconditional, after discarding apparatus and seeds. A preshared classical seed is an explicit initial resource; runtime classical propagation remains local.
+
+Use the diameter-capped scale and finite feasibility statements. Do not extrapolate N/D^d beyond system diameter. Do not replace a uniform Gram-norm bound by qualitative pair-correlation decay. Do not transfer a global-fidelity theorem to a local one-point diagnostic without proving its hypotheses.
+
+The static and strict-product orbit converses do not use symmetry. The shared-classical causal-volume converse uses strong sector support. Exact upper constructions are strongly symmetric at every step.
+
+The continuous-time upper permits local apparatus whose dimension can grow; the explicit coherent implementation stores O(log block volume) auxiliary qubits per site. It is not an exact bounded-rate system-only Lindblad dephasing construction.
+
+The contribution is the matched preparation frontier and its resource dependence. Binary Holevo bounds, Uhlmann fidelity, entropy continuity, Lieb–Robinson bounds, and classical pairwise-independent masks are inherited. Finite numerical checks supplement analytical proofs.
