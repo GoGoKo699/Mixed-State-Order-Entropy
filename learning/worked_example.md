@@ -1,8 +1,8 @@
-# Four spins: independent masks and one shared bit
+# Block masks with a shared seed budget
 
 [Educational anchor](anchor.md) · [Milestone map](milestones.md) · [General constructions](../science/constructions.md)
 
-Four neighboring spins already show the resource distinction. We will prepare two states with the same ordinary pair correlations and the same maximal pair fidelity. One explicit preparation leaves **three bits** of entropy; the other leaves **two bits** by using a classical bit shared before preparation begins.
+Four neighboring spins show what a single shared bit changes. Two explicit states have the same ordinary pair correlations and maximal pair fidelity. The product preparation leaves **three bits** of entropy, and one preshared bit lowers the retained entropy to **two bits**. An [eight-spin example](#eight-spins-with-zero-one-or-two-shared-bits) then gives an intermediate budget between independent masks and fully shared masks.
 
 This is a complete finite example of the construction. The [circuit bounds](../science/circuit_bounds.md) establish the general optimal scaling; the example alone does not prove a one-bit lower bound at a particular four-spin depth.
 
@@ -177,3 +177,33 @@ S_{\mathrm{sh}}=K-1+\log_2m.
 Local propagation determines which block sizes are available within a depth budget. The matching converse is what turns this family of examples into the two optimal scaling laws.
 
 The four-spin shared state also reaches the preparation-independent maximal-fidelity floor $`\log_2 4=2`$ from [Proposition E6](../science/entropy_bounds.md#proposition-e6-maximal-fidelity-endpoint). The value three in the explicit product preparation is not a claim of finite-depth optimality. Indeed, after the first Bell-preparation layer, a single boundary channel that independently randomizes $`X_2X_3`$ and $`Z_2Z_3`$ prepares the same two-bit state using only product initial resources. The $`X_2X_3`$ operation toggles both block mask labels locally, up to an irrelevant phase. This special four-spin alternative does not extend to free coordination among arbitrarily distant blocks. The general converse and charged propagation, rather than this example alone, establish the asymptotic resource separation.
+
+## Eight spins with zero, one, or two shared bits
+
+Use two adjacent blocks of four spins. Give the sites in each block the labels $`00,10,01,11`$, with $`00`$ at the anchor. Grow a plus GHZ state in each block. For a two-bit seed $`a=(a_1,a_2)`$, apply $`X`$ at the sites where the dot product with $`a`$ is one. The resulting mask pattern in the first block is $`u(a)=(0,a_1,a_2,a_1\oplus a_2)`$. The second block uses its own seed $`b`$ in the same table. Reading the two basis-vector labels of a canonical pattern determines its seed.
+
+For $`s=0,1,2`$, share the first $`s`$ coordinates of $`a`$ and $`b`$ before the run. Generate the remaining $`2-s`$ bits independently in each block, and propagate them within the block as needed. Apply a fair boundary channel to a neighboring pair across the blocks, as in the four-spin example. Its independent coin sets the same cat phase $`\epsilon`$ in both blocks.
+
+Let $`|u;\epsilon\rangle=(|u\rangle+(-1)^\epsilon|u\oplus 1111\rangle)/\sqrt2`$. If $`a_{1:s}=b_{1:s}`$ denotes agreement on the shared prefix, the exact retained state is
+
+```math
+\rho_s=
+2^{-(5-s)}
+\sum_{\substack{a,b\in\mathbb F_2^2\\a_{1:s}=b_{1:s}}}
+\sum_{\epsilon=0}^1
+\bigl(|u(a);\epsilon\rangle\langle u(a);\epsilon|\bigr)
+\otimes
+\bigl(|u(b);\epsilon\rangle\langle u(b);\epsilon|\bigr).
+```
+
+The terms are orthogonal because different canonical masks or different phase signs distinguish the underlying cat states. All allowed labels have the same probability. The phase contributes one bit regardless of how the masks are generated.
+
+| Shared entropy used | Seed arrangement | Rank | Each nonzero eigenvalue | $`S(\rho_s)`$ |
+|---:|---|---:|---:|---:|
+| 0 bits | Both coordinates generated independently in each block | 32 | $`1/32`$ | 5 bits |
+| 1 bit | One common coordinate and one new coordinate per block | 16 | $`1/16`$ | 4 bits |
+| 2 bits | Both coordinates common to the two blocks | 8 | $`1/8`$ | 3 bits |
+
+For every budget in the table, the seed within either block is uniform. Different site labels in one block therefore give mean pair sign zero. Across blocks, every pure cat branch has a zero single-spin $`Z`$ mean, so the cross-block correlation vanishes as well. The same phase bit in both blocks keeps the total charge positive. A cross-block $`Z_iZ_j`$ toggles both phases and preserves the equally weighted mixture, and a within-block pair preserves each projector. Thus all three states have $`C=I_8`$ and all pair fidelities equal to one.
+
+In $`K`$ equal blocks with $`2^r`$ sites each, the same construction has $`K-1`$ boundary phase bits, $`s`$ common mask bits and $`K(r-s)`$ independent mask bits for any integer $`0\le s\le r`$. Each additional common bit replaces $`K`$ independent mask bits by one, reducing the entropy of this construction by $`K-1`$ bits. The [seed-budget theorem](../science/shared_seed_budget.md) bounds all local protocols with $`H(R)\le h`$, including a biased shared seed and seed-dependent local controls. Its asymptotic law is separate from finite-size optimality of the examples above.

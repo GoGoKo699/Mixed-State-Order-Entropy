@@ -4,6 +4,8 @@
 
 The optimization and resource classes are defined in the [model](model.md). Write $`\mathcal P_D`$ for product-resource depth-$`D`$ outputs and $`\mathcal C_D`$ for their convex hull under an initially shared classical variable. A circuit layer is the tensor product of its disjoint-support channels; a hidden common noise source is not part of $`\mathcal P_D`$.
 
+The [finite-budget theorem](shared_seed_budget.md) quantifies the intermediate case in which the common variable has bounded Shannon entropy.
+
 For explicit finite formulas, use a nearest-neighbor, one- or two-site gate convention on $`\{1,\ldots,L\}^d`$, with $`N=L^d`$. A range-$`a`$ convention replaces the causal radius $`D`$ below by $`aD`$; all headline scalings change only fixed constants. The lower bounds allow arbitrary finite local apparatus dimensions and channels that need not preserve $`Q`$ during the circuit; only the promised final-state conditions are imposed. The upper constructions use bounded local workspace and preserve the global charge at every step.
 
 Throughout,

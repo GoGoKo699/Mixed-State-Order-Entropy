@@ -2,8 +2,8 @@
 
 The script checks the **final masked density matrices** of the preparations in
 [Matching local preparations](../science/constructions.md). It verifies finite
-instances of both preparation models and includes controls that deliberately
-violate one of the target promises.
+instances of independent, fully shared, and entropy-limited shared seeds.
+Two controls each violate one of the target promises.
 
 The rank, entropy, locality, asymptotic depth, and growing-support statements are
 proved on the construction page. The computations here check arithmetic and
@@ -37,9 +37,11 @@ Each final state is computed in three ways.
 1. **Local circuit trajectories.** The data start in a product of plus states.
    The two-site fusion gate grows each GHZ block. For the strict model, an
    explicit two-buffer schedule moves every seed bit down its local tree and
-   applies the corresponding local controlled-X operations. The shared model
-   starts from the specified preloaded classical mask law. Independent
-   boundary coins are then applied, and all branches are averaged.
+   applies the corresponding local controlled-X operations. Shared bits are
+   preloaded before the circuit starts. In the split construction a common
+   prefix and each block's independent suffix supply different coordinates of
+   the same mask. Independent boundary coins are then applied, and all branches
+   are averaged.
 2. **Channel composition.** Each binary mask generator and each boundary
    operator is applied as a two-Kraus twirling channel. The reverse order of
    mask and boundary channels is also evaluated.
@@ -67,7 +69,7 @@ the circuit depth.
 
 ## Cases and recorded results
 
-All 11 case assertions passed in the recorded run. The nine intended
+All 17 case assertions passed in the recorded run. The 15 intended
 construction cases have the identity ordinary ZZ Gram matrix and pair root
 fidelity one to numerical tolerance. The two controls show the expected
 failure of one promise.
@@ -83,8 +85,21 @@ failure of one promise.
 | Shared local-support repair | 8 | 6 | 64 | All tested charged correlations vanish |
 | One strict block | 6 | 3 | 8 | Unrepaired higher charged correlation detected |
 | Singleton blocks | 4 | 3 | 8 | Boundary incidence rank is three |
+| Split masks, blocks of sizes 4, 3, 1, zero shared bits | 8 | 6 | 64 | Four independent local coordinates |
+| Split masks, blocks of sizes 4, 3, 1, one shared bit | 8 | 5 | 32 | One common coordinate and two local coordinates |
+| Split masks, blocks of sizes 4, 3, 1, two shared bits | 8 | 4 | 16 | Both mask coordinates shared |
+| Split masks, blocks of sizes 4, 2, 1, zero shared bits | 7 | 5 | 32 | Three independent local coordinates |
+| Split masks, blocks of sizes 4, 2, 1, one shared bit | 7 | 4 | 16 | One common coordinate and one local coordinate |
+| Split masks, blocks of sizes 4, 2, 1, two shared bits | 7 | 4 | 16 | The second shared bit affects only the largest block |
 | Control: remove masks | 8 | 1 | 2 | Ordinary within-block ZZ correlation is one |
 | Control: remove boundary channel | 8 | 4 | 16 | Cross-block root fidelity is zero |
+
+For each split-mask state, the script checks that the mask rank equals the
+number of common prefix bits plus the sum of the local suffix widths. The
+boundary rank is two in both layouts. The one- and two-shared-bit preparations
+for blocks of sizes 4, 2, 1 produce equal densities to numerical tolerance.
+The second bit already belongs exclusively to the largest block when generated
+locally.
 
 The shared global-label and reused-label eight-site states coincide exactly in
 the recorded floating-point arrays. Their canonical mask rank is two, although

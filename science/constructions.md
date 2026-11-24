@@ -4,6 +4,8 @@
 
 This page proves local circuit constructions with maximal pair fidelity order, their resource costs, and their exact output spectra. It gives matching upper bounds for the strict product and shared classical randomness models in [Circuit bounds](circuit_bounds.md). The finite numerical checks at the end audit the implementations separately from the general proofs.
 
+The [finite-budget construction](shared_seed_budget.md) uses the same circuit with a mask split between preshared and independent local bits.
+
 ## 1. Setting and common construction
 
 There are $`N\ge 2`$ retained qubits on a finite lattice of fixed spatial dimension $`d`$. Write

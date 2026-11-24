@@ -29,7 +29,7 @@ The middle column describes what to extract for this project; it is not a list o
 | [Sections 2.3.1–2.3.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf) | Measurement probabilities and ensembles | Relate a joint spin measurement to a classical law without replacing the quantum state by that law. |
 | [Sections 3.2.1–3.2.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf) | Fidelity and its purification and channel properties | Use Definition 3.11, Theorem 3.22, Corollary 3.26, and Theorem 3.27 in the entropy arguments. |
 | [Section 4.1.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.4.pdf) | Mixtures of unitary channels and pinching | Recognize a random Pauli operation and a binary twirl as ordinary channels with discarded records. |
-| [Sections 5.1.1–5.1.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.5.pdf) | Shannon entropy and its basic relations | Count independent fair labels and define binary entropy. |
+| [Sections 5.1.1–5.1.2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.5.pdf) | Shannon entropy and its basic relations | Count independent fair labels and bound the information that an arbitrary shared seed carries about a local outcome. |
 | [Sections 5.2.1–5.2.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.5.pdf) | Quantum entropy, subadditivity, continuity, and data processing | Translate spectral entropy into a lower bound; separate a valid dimension-dependent continuity estimate from the stronger continuity input needed later. |
 | [Section 5.3.3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.5.pdf) | Classical labels encoded in quantum states | Use the Holevo quantity, particularly Eq. (5.260), while distinguishing it from accessible measurement information. |
 | [Section 6.1.1](https://cs.uwaterloo.ca/~watrous/TQI/TQI.6.pdf) | Product states and convex mixtures of product states | Understand how an initially separable resource may still contain shared classical correlations. Spatial preparation cost requires further assumptions. |
@@ -60,9 +60,9 @@ The project imposes three different conditions:
 
 - $`Q\rho=\rho`$ fixes the support to the plus-charge sector. Mere invariance $`Q\rho Q=\rho`$ permits a mixture of sectors and is weaker.
 - $`C\preceq\kappa I`$, with fixed $`\kappa`$, controls the entire ordinary correlation matrix. Small individual entries alone do not give this uniform spectral bound.
-- $`f_{ij}\ge c>0`$ compares the original **global** state with a pair-conjugated global state. It is not an ordinary expectation value and does not describe a fidelity between two-site marginals.
+- $`f_{ij}\ge c\gt 0`$ compares the original **global** state with a pair-conjugated global state. It is not an ordinary expectation value and does not describe a fidelity between two-site marginals.
 
-These are the [model's promises](../science/model.md), not assumptions built into the textbook's definitions. Likewise, a shared classical seed and a product initial apparatus belong to different resource classes. Averaging product states conditioned on a seed need not produce an unconditionally product state.
+These are the [model's promises](../science/model.md). The shared variable $`R`$ can select product inputs and local controls before the clock starts. Its budget is $`H(R)\le h`$, with no requirement that its law be uniform or that it consist of exactly $`h`$ bits. Distant causal cones can be independent conditional on $`R`$ while their averaged outputs are correlated.
 
 The entropy cost is always the entropy of the actual retained density matrix after records are discarded. It is not the entropy of one convenient preparation log, the entropy conditioned on knowing a seed, or a heat cost. The [worked example](worked_example.md) shows these distinctions with explicit matrices.
 
@@ -96,7 +96,9 @@ The precise arguments are [Proposition E2 and Theorem E3](../science/entropy_bou
 
 This is where the model changes the conclusion. In a product-resource circuit, sufficiently separated output regions have disjoint backward causal cones and factor exactly. Their orbit Gram matrices therefore tensorize, allowing entropy contributions from many regions to add. With a preshared classical seed, only conditional factorization is automatic. The shared-classical proof instead uses strong symmetry in every positive-weight branch to establish a uniform classical measurement law.
 
-Neither implication follows from the definition of a channel alone. They are established in [Circuit bounds](../science/circuit_bounds.md). The matching upper examples require an additional constructive argument: create coherent blocks, randomize their relative charge signs, and choose masks whose distinguishable patterns have controlled rank. [Constructions](../science/constructions.md) proves the spectrum and counts signal propagation, gates, and workspace.
+At unit pair fidelity, the global even-cat basis turns the problem into a classical entropy calculation. A computational-basis record $`X`$ has $`H(X)=S(\rho)+1`$. In each selected box $`B`$, the shared seed can reduce the conditional readout entropy below $`H(X_B)`$ by at most $`I(X_B:R)\le H(R)`$. Charge support still forces one bit of complement symmetry in each branch. Keeping one box unconditioned and conditioning the others exposes the finite-seed cost. [Shared seed budget](../science/shared_seed_budget.md)
+
+The construction realizes this reuse by loading a common prefix of each block mask and generating its suffix locally. The distinguishable mask rank counts the prefix once and the independent suffix in every block. Coherent block growth and relative charge mixing complete the output, with local propagation and workspace charged explicitly. [Constructions](../science/constructions.md) · [Worked example](worked_example.md#eight-spins-with-zero-one-or-two-shared-bits)
 
 ### From exact cones to finite propagation speed
 
@@ -112,6 +114,7 @@ The textbook provides the vocabulary and standard information inequalities. The 
 |---|---|
 | The inherited binary Holevo–fidelity inequality and its attribution | [Entropy bounds, E1](../science/entropy_bounds.md#proposition-e1-binary-holevo-information-from-fidelity), citing Roga, Fannes, and Życzkowski |
 | Spatially amplified orbits and the distinct shared-seed converse | [Circuit bounds](../science/circuit_bounds.md) |
+| The entropy cap for a general shared seed and the matching split-mask construction | [Shared seed budget](../science/shared_seed_budget.md) |
 | Exact cat-sector spectrum, classical masks, and local schedules | [Constructions](../science/constructions.md), including attribution to the classical independence constructions |
 | Lieb–Robinson propagation, shell cuts, and conditional entropy continuity | [Continuous-time bounds](../science/continuous_time.md), using the primary Barthel–Kliesch and Winter results identified there |
 | Sharp support assumptions, leakage corrections, and failures of qualitative clustering | [Scope and robustness](../science/scope_and_robustness.md) |
