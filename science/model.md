@@ -52,11 +52,14 @@ Initial nonlocal quantum entanglement is not supplied. Local mixed inputs can be
 | Preparation model | Initial resource and controls |
 |---|---|
 | Product model | The complete initial system and apparatus state factors over sites. All random sources are local and independent. A seed broadcast during the run is charged to the depth. |
+| Finite shared-seed budget | The shared-classical model with $`H(R)\le h`$ bits of Shannon entropy. Independent local randomness remains available. |
 | Shared-classical model | A classical variable $`R`$ may be distributed before the charged run. Conditioned on $`R`$, the initial state factors over sites and the preparation is local. The output averages over $`R`$. No outcome-dependent nonlocal communication during the run is supplied. |
 
 The latter model includes fully separable initial resources with arbitrary classical correlations. A preshared seed is an explicit resource; it is not equivalent to a globally acting quantum gate or to free nonlocal feedback after measurements. Any retained seed register would be part of the output whose entropy is charged; here the retained output is precisely the $`N`$ spins.
 
 The lower bounds permit arbitrary local channels with the stated final-state conditions. The matching preparations can be chosen strongly symmetric at every step. They therefore also attain the bounds in the more restrictive strongly symmetric preparation class.
+
+The [finite-budget result](shared_seed_budget.md) allows a nonuniform common variable and local controls depending on it. Every common source used in the preparation is part of $`R`$. The budget concerns its entropy before the run. At unit pair fidelity the preparation admits matching bounds uniform over this entire budget, with the starting depth covered by separate feasibility statements.
 
 ## Optimization and scaling convention
 

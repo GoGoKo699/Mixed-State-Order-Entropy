@@ -1,8 +1,8 @@
 # Related work and attribution
 
-The contribution is a pair of **matching retained-entropy versus local-preparation frontiers**, together with the distinction between product apparatus and preshared classical coordination. This page separates that result from the information inequalities, order diagnostics, and classical constructions it uses.
+The contribution is a set of **matching retained-entropy versus local-preparation bounds** with a finite shared-randomness budget at unit pair fidelity. The proof uses established information inequalities, order diagnostics, locality estimates, and classical mask constructions.
 
-The comparison below was checked against primary sources on 5 November 2026. Version identifiers identify the inspected scientific account; a preprint is not described as a published result unless journal metadata is verified. The [structured bibliography](references.bib) records the same source identities.
+The comparison was first checked against primary sources on 5 November 2026. The finite-budget comparison was added on 24 November 2026. The [bibliography](references.bib) records the inspected versions.
 
 ## Information-theoretic ingredients
 
@@ -28,7 +28,9 @@ Purification, Uhlmann's theorem, fidelity data processing and joint concavity, G
 
 ## General mixed-state preparation bounds
 
-**McGinley–Garratt, [arXiv:2510.02275v1](https://arxiv.org/abs/2510.02275), Theorems 1–2 and Supplement S2.** Their lower bounds compare a subsystem's information about a distant subsystem with its information about a purifier. The model permits ensembles of local circuits and, in the supplement, local ancillas. Shared classical correlations are therefore already explicit in their framework. The present target instead fixes global pair fidelity and ordinary Gram norm, optimizes retained entropy, and separates strict product apparatus from the shared-classical class. Their stated bounds do not supply the matched spatial logarithmic amplification and its two constructions.
+**McGinley–Garratt, [arXiv:2510.02275v1](https://arxiv.org/abs/2510.02275v1), Theorems 1–2 and Supplement S2.** Their lower bounds compare a subsystem's information about a distant subsystem with its information about a purifier to constrain preparation depth. The model permits ensembles of local circuits and local ancillas. Here the target is a class of states with prescribed global pair fidelity and an ordinary Gram-norm bound. Conditioning on the classical circuit choice quantifies how much of each causal volume's entropy can be supplied by the common seed.
+
+**Kumar, Li, and El Gamal, [arXiv:1402.0062v1](https://arxiv.org/abs/1402.0062v1), Section II.** Exact common information asks how much common randomness is needed to generate a prescribed classical joint law. Their single-shot quantity minimizes the entropy of a variable that makes the output pair conditionally independent. The [finite-budget proof](../science/shared_seed_budget.md) uses the same conditional-independence principle with the specified preparation seed, whose physical influence is constrained by spatial locality. The joint output law is free to vary subject to the spin promises, and the objective is the entropy of the quantum state left at the end of the run.
 
 **Westhoff, Murciano, and Moroder, [arXiv:2610.13784v1](https://arxiv.org/abs/2610.13784v1).** This gives locality–relaxation-time relations for quadratic fermionic dissipative preparation by optimizing jump-operator localization at fixed target. Its resource variable and dynamical class differ from the retained-entropy optimization here. In particular, the Hamiltonian-apparatus upper bound in this repository is not a claim about an exact system-only steady-state relaxation protocol.
 
@@ -50,10 +52,11 @@ The supported result consists of the following linked statements.
 
 1. A product-input preparation obeys a spatially amplified orbit-entropy lower bound. In circuits, disjoint backward cones give exact Gram tensorization. In continuous time, shell cuts and small fingerprint registers give a controlled conditional-entropy replacement.
 2. Strong sector support yields a causal-volume entropy bound even with arbitrary preshared classical randomness. Combining it with the static floor gives the second frontier.
-3. Explicit strongly symmetric preparations attain both scalings. Their exact rank formula distinguishes the number of supplied seed bits from the mixedness retained by the system, and their local schedules charge actual signal propagation.
-4. Counterexamples delimit the correlation and sector assumptions; stronger local masks show that hidden composite charged correlations are not needed for the upper scaling.
+3. At unit fidelity, separated readout blocks pay the entropy they still require once the common variable is supplied. The deficit is determined by the gap between the block's logarithmic volume and the seed budget. In continuous time the shell estimate applies inside each seed branch.
+4. Explicit strongly symmetric preparations match these bounds. The exact rank formula counts how many distinct mask directions remain after each shared bit is reused across blocks. Local schedules charge the propagation of the independent bits.
+5. Counterexamples delimit the correlation and sector assumptions. Stronger masks for the endpoint preparations suppress correlations of general local charged observables.
 
-The sources compared here supply important parts of the framework and methods, but do not state this pair of matching frontiers under these resource and correlation assumptions. That is a comparison of the identified models and results, not a claim that an exhaustive literature search can prove absolute priority.
+The additional result is the matching dependence of retained entropy on the common seed budget and causal volume under the stated order and correlation constraints.
 
 ## Scope of the comparison
 

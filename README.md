@@ -2,7 +2,7 @@
 
 **How much mixedness must a many-body state retain when global fidelity order is prepared in a limited local time?**
 
-This repository gives matching upper and lower bounds on the final von Neumann entropy of strongly symmetric qubit states with nonzero global pair fidelity and a uniformly bounded ordinary correlation matrix. The answer depends on the initial classical resources: independent local apparatus pays a logarithmic entropy cost in each causal volume; a preshared classical seed can coordinate those costs.
+This repository gives matching bounds on the retained entropy of strongly symmetric spin states with global fidelity order. Independent local apparatus pays a logarithmic entropy cost in each causal volume. A common seed reuses the same random bits across volumes, and the entropy of that seed determines how much of the cost it removes.
 
 ## Main result
 
@@ -17,7 +17,16 @@ C\preceq\kappa I,\quad C_{ij}=\mathrm{Tr}(\rho Z_iZ_j).
 
 Here $`F`$ is **root Uhlmann fidelity**, and $`c,\kappa`$ are fixed independently of size and depth. Entropy is in bits. The condition on $`C`$ includes exact zero ordinary pair correlations and uniform summable clustering. Qualitative decay alone is insufficient.
 
-For depth $`D`$ local-channel circuits, set $`\ell_D=\min\{L,D+1\}`$. The minimum possible retained entropy obeys
+For depth $`D`$ local-channel circuits, write $`\ell_D=\min\{L,D+1\}`$, $`V=\ell_D^d`$, and $`K=N/V`$. Let $`h`$ be the budget on the Shannon entropy of a common seed supplied before preparation. At **unit pair fidelity** the [finite-budget theorem](science/shared_seed_budget.md) gives
+
+```math
+S_{\min}(h)=\Theta_{d,\kappa}\!\left[
+K+\log_2 N+K[\log_2 V-h]_+\right].
+```
+
+The law is uniform in $`h\ge 0`$ at depth $`D\ge 2`$ in the nearest-neighbor two-site circuit model, for sufficiently large lattices. A shared seed of about $`\log_2 V`$ bits removes the additional logarithmic cost across causal volumes. At depth zero, unit fidelity instead requires $`N-1`$ shared bits. The [small-depth bounds](science/shared_seed_budget.md) detail feasibility.
+
+At any fixed positive threshold $`c`$, the two [endpoint laws](science/circuit_bounds.md) are
 
 ```math
 S_{\min}^{\mathrm{prod}}(N,D)
@@ -31,18 +40,18 @@ S_{\min}^{\mathrm{shared}}(N,D)
 \frac{N}{\ell_D^d}+\log_2N\right].
 ```
 
-The constants also absorb the fixed local gate range. The product-input statement holds above a fixed feasibility threshold; the nearest-neighbor two-site model has a depth-two baseline. The shared-classical model is feasible at depth zero. Both laws hold uniformly for sufficiently large systems and saturate at order $`\log N`$ at diameter depth. The proof pages give finite-size bounds and the small-depth exceptions.
+At imperfect fidelity, the finite-budget bounds determine the logarithmic scale of the seed budget, with the leading coefficient unresolved. Both endpoint laws saturate at order $`\log N`$ at diameter depth. An unlimited shared seed allows depth-zero preparation.
 
 | Initial resources | Meaning of the preparation model | Entropy scale before the diameter cap |
 |---|---|---|
 | Product system and apparatus | Independent local inputs and random sources; any runtime broadcast is charged | $`N\log(D+2)/(D+1)^d`$ |
 | Shared classical randomness | A classical variable can select local inputs and controls before the clock starts; no nonlocal quantum input or instantaneous runtime feedback | $`N/(D+1)^d+\log N`$ |
 
-The [continuous-time theorem](science/continuous_time.md) gives the corresponding bounds for finite-range generators with uniformly bounded strength and overlap. Matching preparations use local Hamiltonians, explicit local apparatus, and a final discard. Their on-site apparatus can grow logarithmically with block size. Exact matching within a fixed-dimensional, system-only Markovian model is a separate question.
+The same [finite-budget law](science/shared_seed_budget.md) holds in continuous time with the diameter-capped propagation volume of the [bounded-generator model](science/continuous_time.md). Matching preparations use local Hamiltonians, local apparatus, and a final discard. The explicit on-site apparatus can grow logarithmically with block size.
 
 ## Mechanism and matching preparations
 
-The lower bound combines an inherited binary Holevo–fidelity inequality with a spatial family of purified unitary orbits. A correlation-matrix norm bound supplies entropy in each orbit label. Product initial resources make sufficiently separated circuit regions independent, so the local logarithmic costs add. For continuous time, local fingerprint registers and conditional-entropy continuity retain this addition despite Lieb–Robinson tails.
+At unit fidelity the state is diagonal in the even-cat basis, so the joint $`Z`$ readout measures its entropy up to one bit. The Gram bound forces many distinguishable outcomes in each causal volume. Conditioning on the common seed removes at most $`h`$ bits from each block's marginal entropy, and separated blocks are independent given the seed. At imperfect fidelity, a purified orbit and the Holevo–fidelity inequality replace the exact readout identity. In continuous time a local shell cut bounds the conditioning error from distant blocks.
 
 The upper construction prepares coherent cat states in blocks, mixes their relative charge signs using local boundary channels, and applies low-entropy classical masks. Its spectrum is known exactly:
 
@@ -50,7 +59,7 @@ The upper construction prepares coherent cat states in blocks, mixes their relat
 S(\rho)=K-1+\mathrm{rank}_{\mathbb F_2}(TA),
 ```
 
-where $`K`$ is the block count and $`TA`$ records distinguishable mask patterns after blockwise complement symmetry is removed. Independent block seeds and one reused shared seed give the two matching entropy laws. Strong symmetry is maintained at every preparation step. A stronger mask also removes correlations of arbitrary fixed-support charged observables without changing the asymptotic costs.
+Here $`K`$ is the actual number of preparation blocks and $`TA`$ describes their distinguishable mask patterns. Sharing the first mask coordinates and generating the rest within each block attains the finite-budget law. Each operation preserves strong symmetry. The [endpoint constructions](science/constructions.md) also provide masks that suppress correlations of general local charged observables.
 
 The contribution is the matched physical preparation frontier and its dependence on initial classical coordination. Fidelity order, the information inequalities, classical small sample spaces, and Lieb–Robinson propagation are credited in the [related-work account](references/related_work.md).
 
@@ -59,6 +68,7 @@ The contribution is the matched physical preparation frontier and its dependence
 | Question | Authoritative page |
 |---|---|
 | What exactly is optimized? | [Model and assumptions](science/model.md) |
+| How much shared randomness reduces the entropy cost? | [Finite-budget theorem](science/shared_seed_budget.md) |
 | Why is there a global logarithmic entropy floor? | [Information and orbit bounds](science/entropy_bounds.md) |
 | How do locality and shared randomness change the answer? | [Circuit bounds](science/circuit_bounds.md) |
 | Which states attain the bounds, and what resources prepare them? | [Matching constructions](science/constructions.md) |
@@ -73,7 +83,7 @@ Start with the [science reading guide](science/README.md) for a connected route.
 
 The [learning guide](learning/README.md) connects John Watrous's *The Theory of Quantum Information* (2018) to this problem. The [anchor and bridge](learning/anchor.md) identifies the relevant sections, translates notation, and separates textbook foundations from the locality arguments supplied here.
 
-The [30-milestone map](learning/milestones.md) develops the background and then the research argument, moving from individual states and channels to the two complete preparation frontiers. A [worked block example](learning/worked_example.md) makes the entropy accounting concrete: distinguishable mask patterns and block-charge signs contribute different parts of the final spectrum.
+The [30-milestone map](learning/milestones.md) moves from states and channels to the preparation frontier. The [worked block example](learning/worked_example.md) shows how the shared seed and block-charge signs contribute to the final spectrum.
 
 ## Reproduce the finite checks
 

@@ -2,7 +2,7 @@
 
 This is a common map of the project's ideas. The single educational anchor is John Watrous, *The Theory of Quantum Information* (2018), as identified on the [author's book page](https://cs.uwaterloo.ca/~watrous/TQI/). The [anchor and bridge](anchor.md#targeted-sections) records the verified section references and connects the book's notation to this repository. The section pointers below select foundations; they do not prescribe reading the whole book. Project links identify the authoritative assumptions, statements, and proofs.
 
-The allocation is **12 background/preliminaries milestones and 18 narrative/innovation milestones**. The first phase assembles the state, channel, information, and spatial-resource language needed to formulate one precise optimization. The second has more room because the result needs two different converse mechanisms, an explicit matching preparation, and a controlled continuous-time extension. Both phases run from individual objects and local operations toward a complete many-body statement. Their final milestones integrate the preceding ideas.
+The allocation is **12 background/preliminaries milestones and 18 narrative/innovation milestones**. The first phase assembles the state, channel, information, and spatial-resource language needed for the optimization. The second moves from the information bound to the seed-budget converse, the matching split-mask preparation, and the continuous-time extension.
 
 | Phase | Milestones | Local-to-global progression |
 |---|---|---|
@@ -10,8 +10,8 @@ The allocation is **12 background/preliminaries milestones and 18 narrative/inno
 | Background / preliminaries | M05–M08 | Charge support, ordinary correlations, and fidelity become distinct global state conditions. |
 | Background / preliminaries | M09–M12 | Ensemble information and entropy identities combine with spatial resources to define the optimization. |
 | Narrative / innovation | M13–M16 | A binary information inequality becomes an orbit argument and a preparation-independent entropy floor. |
-| Narrative / innovation | M17–M20 | Local causal structure produces different spatial lower bounds for product and shared-classical resources. |
-| Narrative / innovation | M21–M24 | Symmetric gates and classical masks become exact-spectrum preparations matching the circuit bounds. |
+| Narrative / innovation | M17–M20 | Causal separation and the entropy of the shared seed control the cost of distinct regions. |
+| Narrative / innovation | M21–M24 | Symmetric gates and split masks give exact spectra and match the finite-seed circuit frontier. |
 | Narrative / innovation | M25–M27 | Local propagation estimates and small auxiliary registers extend the result to continuous time. |
 | Narrative / innovation | M28–M30 | Robustness, counterexamples, and attribution delimit the final physical conclusion. |
 
@@ -131,7 +131,7 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** How can information about many labels be decomposed without assuming those labels remain independent after observation?
 
-**Understanding target:** Connect entropy chain rules, conditional entropy, subadditivity, and data processing. These identities distinguish an exact algebraic decomposition from the physical independence assumption that may later simplify it.
+**Understanding target:** Connect entropy chain rules, conditional entropy, subadditivity, and data processing. For a classical label $`R`$ and outcome $`X_B`$, use $`H(X_B\mid R)=H(X_B)-I(X_B:R)`$ and $`I(X_B:R)\le H(R)`$ to quantify how much learning the label can reduce uncertainty about the outcome.
 
 **Dependencies and story role:** Builds on [M09](#m09-ensemble-entropy-and-holevo-information). It supplies the transition from a binary label to a large ensemble and from a pure system–environment state to a retained-state lower bound.
 
@@ -143,19 +143,19 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** Which correlations are supplied before preparation, and which must propagate during it?
 
-**Understanding target:** Distinguish a product initial system–apparatus state from a classically correlated mixture of product branches. Recognize that separability permits shared classical correlation, while the strict product model excludes it. Signals generated during either preparation obey the same spatial locality constraint.
+**Understanding target:** Distinguish a product initial system–apparatus state from a mixture of product branches labeled by a common classical variable $`R`$. Count the common variable once through its Shannon bound $`H(R)\le h`$. Its law may be biased, and the local schedule may depend on its value. Local random choices remain available in each branch, with signals subject to spatial locality.
 
-**Dependencies and story role:** Combines [M02](#m02-mixtures-and-the-meaning-of-output-entropy), [M03](#m03-a-local-quantum-channel), and [M04](#m04-joint-systems-and-purification). It defines the two classes compared by the main theorem.
+**Dependencies and story role:** Combines [M02](#m02-mixtures-and-the-meaning-of-output-entropy), [M03](#m03-a-local-quantum-channel), and [M10](#m10-entropy-identities-that-assemble-many-parts). It defines the bounded shared resource and locates strict product resources at $`h=0`$.
 
-**Conceptual connection:** A shared classical seed is an initial resource. Its availability is distinct from an allowed local channel or from communication sent after the clock begins.
+**Conceptual connection:** Distributing functions of one seed before the clock starts is an initial resource. Writing the same seed into several control registers does not multiply its Shannon entropy.
 
-**Sources:** [Watrous §§2.2.2, 6.1.1](anchor.md#targeted-sections); [Model: preparation classes](../science/model.md#what-is-charged).
+**Sources:** [Watrous §§2.2.2, 5.1.2, 6.1.1](anchor.md#targeted-sections); [Model: preparation classes](../science/model.md#what-is-charged); [Shared seed budget](../science/shared_seed_budget.md).
 
 ### M12. The complete operational question
 
 **Central question:** What is optimized when order, ordinary correlations, and preparation resources are fixed?
 
-**Understanding target:** Assemble one finite-system problem: minimize unconditional retained entropy over both states and protocols, with fixed fidelity threshold $`c\gt0`$, fixed Gram bound $`\kappa`$, and a specified local depth or time. Interpret an empty feasible class and the diameter cap before using asymptotic notation.
+**Understanding target:** Minimize unconditional retained entropy over states and protocols with fixed fidelity threshold $`c\gt0`$, Gram bound $`\kappa`$, local depth or time, and common seed budget $`h`$. Identify $`c=1`$ as the endpoint with a matching finite-seed law. Interpret an empty feasible class and the diameter cap before using asymptotic notation.
 
 **Dependencies and story role:** Integrates [M05](#m05-symmetry-as-a-support-condition)–[M11](#m11-spatial-preparation-resources). This closes the background phase by stating the exact question that the narrative answers.
 
@@ -241,7 +241,7 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** Which properties hold in every preparation branch when only the averaged state is promised to be ordered?
 
-**Understanding target:** Use positivity to show that exact sector support of the average forces every positive-weight branch into the same sector. Hence each branch has balanced single-site $`Z`$ outcomes. Unconditional fidelity and Gram promises need not hold branchwise, and separated regions need not factorize after the seed is averaged out.
+**Understanding target:** Use positivity to show that exact sector support of the average forces every positive-weight branch into the same sector. The computational-basis law of any nonempty box is invariant under flipping all of its signs, conditional on each seed value. Balance gives at least one conditional entropy bit in every box. Apply fidelity and the Gram bound to the averaged state.
 
 **Dependencies and story role:** Uses [M05](#m05-symmetry-as-a-support-condition), [M08](#m08-fidelity-under-channels-and-classical-mixing), [M11](#m11-spatial-preparation-resources), and [M17](#m17-independent-output-regions-from-causal-cones). It identifies the replacement for the product converse's unconditional factorization.
 
@@ -251,15 +251,15 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 ### M20. Parity twirls and the shared causal-volume bound
 
-**Central question:** How can balanced separated outcomes force entropy even after arbitrary classical coordination?
+**Central question:** How does the entropy of a shared seed limit the savings across distant boxes?
 
-**Understanding target:** Conditioned on the seed, separated single-site outcomes are independent and fair, so their joint law remains uniform after averaging. Relative parities with one reference site then contain one fewer independent bit. Commuting pair twirls expose that entropy, while unconditional fidelity bounds limit the entropy each twirl can add.
+**Understanding target:** At unit pair fidelity, use the even-cat basis to obtain $`H(X)=S(\rho)+1`$ for the complete computational-basis readout. The Gram bound and complement symmetry bound the largest outcome probability in each selected box. Keep one box unconditioned, then condition the distant boxes on $`R`$ and use their conditional independence. Each conditional entropy keeps its complement bit and loses at most $`h`$ bits from its unconditional value. The parity twirl still yields the causal-volume floor when fidelity is imperfect.
 
-**Dependencies and story role:** Combines [M08](#m08-fidelity-under-channels-and-classical-mixing), [M13](#m13-the-binary-information-cost-of-fidelity), [M16](#m16-a-static-entropy-floor-and-its-classical-endpoint), and [M19](#m19-what-survives-a-preshared-classical-seed). It yields the shared-classical volume bound, which is combined with the static floor.
+**Dependencies and story role:** Combines [M10](#m10-entropy-identities-that-assemble-many-parts), [M16](#m16-a-static-entropy-floor-and-its-classical-endpoint), [M17](#m17-independent-output-regions-from-causal-cones), and [M19](#m19-what-survives-a-preshared-classical-seed). It yields the seed-dependent lower bound along with the floor that persists even with unlimited shared randomness.
 
-**Conceptual connection:** Classical coordination can correlate branches without changing a joint outcome law that is identical and uniform in every branch.
+**Conceptual connection:** Conditioning can remove the same shared information from many distant records. The unconditioned record and the branchwise complement bits still contribute entropy.
 
-**Sources:** [Watrous §§4.1.1, 5.1.2, 5.2.2](anchor.md#targeted-sections); [Proposition E5](../science/entropy_bounds.md#proposition-e5-commuting-binary-twirls); [Theorem B5](../science/circuit_bounds.md#theorem-b5-finite-causal-volume-lower-bound); [Corollary B6](../science/circuit_bounds.md#corollary-b6-complete-finite-shared-classical-bound).
+**Sources:** [Watrous §§4.1.1, 5.1.2, 5.2.2](anchor.md#targeted-sections); [Shared seed budget](../science/shared_seed_budget.md); [Proposition E5](../science/entropy_bounds.md#proposition-e5-commuting-binary-twirls); [Theorem B5](../science/circuit_bounds.md#theorem-b5-finite-causal-volume-lower-bound).
 
 ### M21. Growing a symmetric coherent block
 
@@ -277,19 +277,19 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** How can a short classical label erase ordinary pair correlations, and when can that label be reused?
 
-**Understanding target:** Associate distinct binary site labels with linear sign masks. Independent block seeds and one shared seed give different joint ensembles despite identical pair diagnostics. A seed created locally must be streamed through the block; pipelining costs tree height plus seed length. Presharing changes the initial resource, not the speed of later signals.
+**Understanding target:** Associate distinct binary site labels with linear sign masks. Use a common prefix of $`s`$ fair mask bits and generate the remaining suffix independently in each block. Each block still has a uniform seed. Preload the local functions of the prefix and stream the suffix through the block in time of order the tree height plus suffix length.
 
 **Dependencies and story role:** Combines [M02](#m02-mixtures-and-the-meaning-of-output-entropy), [M06](#m06-ordinary-correlations-as-a-gram-matrix), [M11](#m11-spatial-preparation-resources), and [M21](#m21-growing-a-symmetric-coherent-block). It constructs the resource-dependent difference in the upper bounds.
 
 **Conceptual connection:** Classical pairwise-independence constructions acquire a preparation cost when their control labels must travel through space.
 
-**Sources:** [Watrous §§1.2.2, 2.2.3, 5.1.1](anchor.md#targeted-sections); [Proposition C2](../science/constructions.md#proposition-c2-strict-product-masks); [Pipelined broadcast](../science/constructions.md#41-bounded-workspace-pipelined-broadcast); [Proposition C3](../science/constructions.md#proposition-c3-shared-classical-masks).
+**Sources:** [Watrous §§1.2.2, 2.2.3, 5.1.1](anchor.md#targeted-sections); [Pipelined broadcast](../science/constructions.md#41-bounded-workspace-pipelined-broadcast); [Split mask](../science/shared_seed_budget.md); [Worked seed budgets](worked_example.md#eight-spins-with-zero-one-or-two-shared-bits).
 
 ### M23. Boundary phases and the exact retained spectrum
 
 **Central question:** Which random labels remain physically distinguishable after the construction is complete?
 
-**Understanding target:** Quotient out redundant whole-block mask complements, then combine the remaining mask rank $`q`$ with the $`K-1`$ independent even-charge boundary phases. The final orthogonal cat ensemble has entropy $`q+K-1`$, exact strong charge support, unit pair fidelity, and the promised ordinary correlations.
+**Understanding target:** Remove redundant whole-block mask complements, then add the $`k-1`$ independent boundary phases to the distinguishable mask rank. With $`k`$ actual blocks and $`r_b=\lceil\log_2 m_b\rceil`$, the split seed has rank $`s+\sum_b[r_b-s]_+`$. Its orthogonal cat mixture has entropy $`k-1+s+\sum_b[r_b-s]_+`$, exact charge support, unit pair fidelity, and $`C=I`$.
 
 **Dependencies and story role:** Uses [M02](#m02-mixtures-and-the-meaning-of-output-entropy), [M05](#m05-symmetry-as-a-support-condition)–[M07](#m07-global-fidelity-and-purification-overlap), and [M21](#m21-growing-a-symmetric-coherent-block)–[M22](#m22-masks-shared-seeds-and-charged-propagation). It verifies the actual output cost rather than equating that cost with the number of random choices.
 
@@ -301,13 +301,13 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** When do the lower and upper bounds describe the same operational optimization?
 
-**Understanding target:** Match the resource class, retained output, fidelity and Gram promises, and depth accounting on both sides. Combine packing with block constructions to obtain the two circuit laws. Retain the small-depth feasibility exceptions, the fixed-parameter meaning of the constants, and the saturation at diameter depth.
+**Understanding target:** Combine separated-box packing with the split-mask spectrum. At unit pair fidelity the finite-seed frontier has the scale $`K+\log_2N+K[\log_2V-h]_+`$, where $`V`$ is the causal volume and $`K=N/V`$ is the corresponding scale for the number of regions. Recover the product and fully coordinated regimes. Keep the depth threshold, diameter cap, and the distinction between an exact finite spectrum and an asymptotically matched optimum.
 
 **Dependencies and story role:** Integrates [M18](#m18-a-logarithmic-cost-in-every-independent-region), [M20](#m20-parity-twirls-and-the-shared-causal-volume-bound), and [M21](#m21-growing-a-symmetric-coherent-block)–[M23](#m23-boundary-phases-and-the-exact-retained-spectrum). It closes the exact-circuit part of the narrative.
 
 **Conceptual connection:** A matching frontier requires agreement of physical resources as well as agreement of algebraic scaling.
 
-**Sources:** [Watrous §§2.2, 5.2](anchor.md#targeted-sections); [Theorem B7](../science/circuit_bounds.md#theorem-b7-matched-circuit-frontiers); [Finite-depth feasibility](../science/circuit_bounds.md#construction-inputs-and-finite-depth-feasibility); [Proposition C4](../science/constructions.md#proposition-c4-depth-and-resource-bounds).
+**Sources:** [Watrous §§2.2, 5.2](anchor.md#targeted-sections); [Matched seed-budget theorem](../science/shared_seed_budget.md); [Product and unrestricted endpoints](../science/circuit_bounds.md#theorem-b7-matched-circuit-frontiers); [Proposition C4](../science/constructions.md#proposition-c4-depth-and-resource-bounds).
 
 ### M25. From exact cones to a continuous-time shell cut
 
@@ -337,13 +337,13 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** Under which physical implementation assumptions do the time-dependent lower and upper bounds match?
 
-**Understanding target:** Combine shell-cut packing, the small-register bound, and the static floor with the diameter cap. For shared randomness, apply conditional factorization to balanced branch outcomes while keeping fidelity unconditional. Match both laws with bounded Hamiltonian interactions and local apparatus retained until the final discard; distinguish its logarithmic local storage from the reset-assisted circuit's bounded active workspace.
+**Understanding target:** Apply the shell cut conditional on the shared seed and control the entropy error one local region at a time. Combine this estimate with the seed information bound, the static floor and the diameter cap. Bounded Hamiltonian interactions implement the split mask with local apparatus retained until the final discard. Its on-site storage is logarithmic in block size, while the reset-assisted circuit can use bounded active workspace.
 
 **Dependencies and story role:** Integrates [M19](#m19-what-survives-a-preshared-classical-seed)–[M20](#m20-parity-twirls-and-the-shared-causal-volume-bound) and [M24](#m24-matching-the-circuit-frontiers)–[M26](#m26-small-registers-preserve-the-logarithmic-gain). It completes the time extension in the stated local-apparatus model.
 
 **Conceptual connection:** A local channel realization and a bounded system-only Markovian evolution need not have the same exact finite-time capabilities.
 
-**Sources:** [Watrous §§2.2.2–2.2.3, 5.2.1](anchor.md#targeted-sections); [Finite-time constants and cap](../science/continuous_time.md#6-finite-box-theorem-constants-packing-and-the-diameter-cap); [Hamiltonian preparation](../science/continuous_time.md#7-matching-bounded-hamiltonian-preparation); [Shared-classical time bound](../science/continuous_time.md#8-shared-classical-continuous-time-lower-bound).
+**Sources:** [Watrous §§2.2.2–2.2.3, 5.2.1](anchor.md#targeted-sections); [Finite-seed time law](../science/shared_seed_budget.md); [Finite-time constants and cap](../science/continuous_time.md#6-finite-box-theorem-constants-packing-and-the-diameter-cap); [Hamiltonian preparation](../science/continuous_time.md#7-matching-bounded-hamiltonian-preparation).
 
 ### M28. Robustness to actual charge-sector leakage
 
@@ -373,22 +373,18 @@ Dependencies below name the main conceptual inputs, rather than every earlier de
 
 **Central question:** What does classical coordination change about the least mixedness compatible with locally prepared global fidelity order?
 
-**Understanding target:** Integrate the two mechanisms and their matching preparations. At accessible linear scale $`\ell`$, product resources require a logarithmic cost in each causal volume, while a preshared seed permits mask information to be reused:
+**Understanding target:** At maximal pair fidelity, quantify how the common seed controls the least retained entropy. With $`V=\ell^d`$, $`K=N/V`$, and $`[x]_+=\max\{x,0\}`$, the matched scale is
 
 ```math
-S_{\min}^{\mathrm{prod}}
-=\Theta_{d,c,\kappa}\!\left[\frac{N}{\ell^d}\log_2(\ell+1)\right],
-\qquad
-S_{\min}^{\mathrm{sh}}
-=\Theta_{d,c,\kappa}\!\left[\frac{N}{\ell^d}+\log_2N\right].
+S_{\min}(h)=\Theta\!\left(K+\log_2N+K[\log_2V-h]_+\right).
 ```
 
-Here $`\ell=\min\{L,D+1\}`$ in the circuit theorem; the time theorem uses its separately specified propagation scale and apparatus assumptions. Keep the implementation thresholds and finite-size qualifications attached to these laws.
+Here $`\ell=\min\{L,D+1\}`$ in the circuit theorem. The time theorem uses its separate propagation scale and apparatus assumptions. At $`h=0`$ the logarithmic cost appears in each region. A budget of order $`\log_2V`$ can reach the shared floor. For a fixed imperfect fidelity threshold, the finite-seed converse and constructions give bounds with different dependence on that threshold.
 
 **Dependencies and story role:** Integrates [M12](#m12-the-complete-operational-question), [M24](#m24-matching-the-circuit-frontiers), and [M27](#m27-continuous-time-matching-and-its-apparatus-model)–[M29](#m29-correlation-assumptions-and-the-boundary-of-the-order-claim). This closes the narrative by separating the established ingredients from the consequential matched preparation result.
 
-**Conceptual connection:** The scientific contribution is the resource-dependent pair of preparation frontiers and its physical accounting. The binary fidelity inequality, purification interpretation, static logarithmic scale, and classical masks have antecedents. Retained entropy is neither a universal order parameter nor a thermodynamic heat cost.
+**Conceptual connection:** The resource saving comes from replacing independently generated mask coordinates with common coordinates that can be used at distant sites. Charge support and the required global distinguishability set the remaining entropy floor.
 
-**Sources:** [Watrous §§2.2, 3.2, 5.2, 5.3.3](anchor.md#targeted-sections); [Matched circuit theorem](../science/circuit_bounds.md#theorem-b7-matched-circuit-frontiers); [Continuous-time result and scope](../science/continuous_time.md#1-result-and-scope); [Physical interpretation](../science/interpretation.md#a-preparation-frontier-for-retained-mixedness); [The consequential difference from prior work](../references/related_work.md#the-consequential-difference).
+**Sources:** [Watrous §§2.2, 3.2, 5.2, 5.3.3](anchor.md#targeted-sections); [Finite-seed frontiers and scope](../science/shared_seed_budget.md); [Physical interpretation](../science/interpretation.md#a-preparation-frontier-for-retained-mixedness); [The consequential difference from prior work](../references/related_work.md#the-consequential-difference).
 
 Return to the [learning guide](README.md), [anchor and notation bridge](anchor.md), or [scientific reading guide](../science/README.md).

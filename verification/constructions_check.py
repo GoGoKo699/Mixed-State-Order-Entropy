@@ -525,6 +525,44 @@ def mask_constraint_check(case: dict) -> dict | None:
     }
 
 
+def split_mask_cases(block_sizes: tuple[int, ...]) -> list[dict]:
+    """Share a prefix of the label and stream each block's remaining bits."""
+    ends = list(itertools.accumulate(block_sizes))
+    blocks = [
+        block(list(range(start, end)))
+        for start, end in zip([0] + ends[:-1], ends)
+    ]
+    widths = [(size - 1).bit_length() for size in block_sizes]
+    layout = "_".join(map(str, block_sizes))
+    n = ends[-1]
+    cases = []
+    for shared_bits in range(max(widths) + 1):
+        prefix_mask = (1 << shared_bits) - 1
+        prefix_labels = [
+            label & prefix_mask for size in block_sizes for label in range(size)
+        ]
+        local_bits = [max(width - shared_bits, 0) for width in widths]
+        groups = [shared_group(n, prefix_labels, shared_bits)]
+        groups.extend(
+            strict_group(b, [label >> shared_bits for label in range(size)], width)
+            for b, size, width in zip(blocks, block_sizes, local_bits)
+        )
+        cases.append({
+            "name": f"split_masks_blocks_{layout}_shared_{shared_bits}",
+            "n": n,
+            "blocks": blocks,
+            "groups": groups,
+            "boundary": [(end - 1, end) for end in ends[:-1]],
+            "model": "entropy_limited_shared_seed",
+            "split_mask": {
+                "shared_prefix_bits": shared_bits,
+                "block_row_widths": widths,
+                "local_suffix_bits": local_bits,
+            },
+        })
+    return cases
+
+
 def make_cases() -> list[dict]:
     seven = [block([0, 1, 2]), block([3, 4, 5, 6])]
     eight = [
@@ -611,7 +649,7 @@ def make_cases() -> list[dict]:
             "negative": "cross_block_fidelity_fails",
         },
     ]
-    return cases
+    return cases + split_mask_cases((4, 3, 1)) + split_mask_cases((4, 2, 1))
 
 
 def main() -> None:
@@ -658,6 +696,17 @@ def main() -> None:
             assert observed["pair_root_fidelity_min"] < ATOL
         if case.get("growing"):
             assert observed["local_charged"]["max_absolute_two_point"] < ATOL
+        split_mask = case.get("split_mask")
+        if split_mask is not None:
+            split_rank = split_mask["shared_prefix_bits"] + sum(
+                split_mask["local_suffix_bits"]
+            )
+            boundary_rank = len(case["blocks"]) - 1
+            assert prediction["raw_seed_bits"] == split_rank
+            assert prediction["mask_image_rank"] == split_rank
+            assert prediction["boundary_incidence_rank"] == boundary_rank
+            assert observed["numerical_rank"] == 1 << (split_rank + boundary_rank)
+            assert abs(observed["entropy_bits"] - split_rank - boundary_rank) < ATOL
         result = {
             "name": case["name"],
             "model": case["model"],
@@ -677,6 +726,8 @@ def main() -> None:
             "observed": observed,
             "all_case_assertions_passed": True,
         }
+        if split_mask is not None:
+            result["split_mask"] = split_mask
         results.append(result)
         densities[case["name"]] = rho
         print(
@@ -689,6 +740,11 @@ def main() -> None:
         np.linalg.norm(densities["shared_global_labels_8"] - densities["shared_reused_labels_8"])
     )
     assert global_reused_residual < ATOL
+    split_plateau_residual = float(np.linalg.norm(
+        densities["split_masks_blocks_4_2_1_shared_1"]
+        - densities["split_masks_blocks_4_2_1_shared_2"]
+    ))
+    assert split_plateau_residual < ATOL
     baseline_higher = next(
         r for r in results if r["name"] == "strict_single_block_6"
     )["observed"]["local_charged"]["max_absolute_two_point"]
@@ -711,6 +767,7 @@ def main() -> None:
         "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "fusion_checks": fusion_checks,
         "shared_global_and_reused_label_density_residual": global_reused_residual,
+        "split_mask_plateau_density_residual": split_plateau_residual,
         "unrepaired_Hadamard_higher_local_charged_correlation_detected": baseline_higher,
         "cases": results,
         "all_assertions_passed": True,

@@ -16,6 +16,8 @@ S_{\min}^{\mathrm{shared}}=\Theta(\sqrt N).
 
 At fixed depth both costs are extensive. At diameter depth both are logarithmic. Between those regimes the difference can grow logarithmically with system size. These conclusions hold for fixed positive fidelity threshold and fixed Gram-norm bound; allowing either parameter to scale requires the finite inequalities.
 
+The [finite seed budget](shared_seed_budget.md) resolves how the crossover occurs. At unit pair fidelity, before the diameter cap, the excess term is of order $`K[\log_2 V-h]_+`$ with $`V=\ell^d`$ and $`h`$ the shared Shannon budget. When there are many causal volumes, each additional shared bit can replace a copy of one locally generated mask coordinate in each block. For the chain at depth of order $`\sqrt N`$, a shared seed of about $`\tfrac12\log_2N`$ bits attains the smaller scaling. With a fixed fraction less than that budget, the multiplicative logarithmic penalty persists.
+
 ## Where the entropy comes from
 
 The explicit states make two sources of mixedness visible. Boundary channels randomize the signs of block cats subject to one global charge constraint, contributing exactly $`K-1`$ bits. Local masks randomize their internal sign patterns while destroying ordinary pair correlations. The mask contribution is the rank of a binary linear map after physically redundant block complements have been removed.

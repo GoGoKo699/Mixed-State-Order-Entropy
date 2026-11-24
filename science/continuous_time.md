@@ -4,6 +4,8 @@ Both entropy frontiers extend to evolution under finite-range, bounded local gen
 
 The [model](model.md) defines the physical target and resource classes. The [entropy bounds](entropy_bounds.md) and [circuit bounds](circuit_bounds.md) give the common information-theoretic arguments, while the [constructions](constructions.md) give the exact output spectra. This page proves the continuous-time propagation step and states its apparatus assumptions. Source comparisons are collected in [related work](../references/related_work.md).
 
+The [finite shared-seed theorem](shared_seed_budget.md) applies the shell-cut estimate in each seed branch to obtain the continuous-time frontier at unit fidelity.
+
 ## 1. Result and scope
 
 Let $`N=L^d`$ retained qubits occupy the open cubic lattice $`\Lambda_L=\{1,\ldots,L\}^d`$. Set
