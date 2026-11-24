@@ -123,13 +123,13 @@ V_T=\min\{L,1+vT\}^d,\qquad K_T=N/V_T .
 
 At $`c=1`$ the matched law is $`\Theta(K_T+\log_2N+K_T[\log_2 V_T-h]_+)`$ for the same bounded-generator apparatus setting, above a fixed local implementation time. Below unit fidelity the preceding lower and upper coefficient bounds also apply with $`V_T`$.
 
-For the lower bound, take $`p`$ side-$\ell$ cubes with expansions of radius $`r\ge2a`$ inside the lattice and with pairwise separation at least $`2r+2a`$, using the distance convention of the [shell-cut lemma](continuous_time.md#3-shell-cut-trace-factorization). Select $`m=2^q\ge2`$ sites in each cube. In every seed branch the cut comparison of one box with all earlier boxes has trace-distance error at most
+For the lower bound, take $`p`$ cubes with side length $`\ell`$ with expansions of radius $`r\ge2a`$ inside the lattice and with pairwise separation at least $`2r+2a`$, using the distance convention of the [shell-cut lemma](continuous_time.md#3-shell-cut-trace-factorization). Select $`m=2^q\ge2`$ sites in each cube. In every seed branch the cut comparison of one box with all earlier boxes has trace-distance error at most
 
 ```math
 \epsilon=ad\nu(\ell+2r)^{d-1}(e^{vT}-1)e^{-r/a}.
 ```
 
-Apply the local dimension-$m$ [fingerprint channel](continuous_time.md#4-orbit-ensembles-and-local-fingerprint-registers) to each box. The normalized orbit Gram is the resulting state on the unconditional system output. In a particular branch its single-box conditional entropy, given all earlier fingerprint registers, satisfies the existing [continuity estimate](continuous_time.md#5-conditional-entropy-continuity-has-only-a-log-m-cost) when $`\epsilon\le1/2`$. Its additive loss is
+Apply the local [fingerprint channel](continuous_time.md#4-orbit-ensembles-and-local-fingerprint-registers) of dimension $`m`$ to each box. The normalized orbit Gram is the resulting state on the unconditional system output. In a particular branch its single-box conditional entropy, given all earlier fingerprint registers, satisfies the existing [continuity estimate](continuous_time.md#5-conditional-entropy-continuity-has-only-a-log-m-cost) when $`\epsilon\le1/2`$. Its additive loss is
 
 ```math
 A(\epsilon,m)
